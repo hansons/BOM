@@ -6,7 +6,7 @@ Reference sheets on the kingdom of heaven and the teaching of Jesus, drawn from 
 |---|---|
 | [`index.html`](index.html) | Home page listing the sheets |
 | [`what-they-heard-in-galilee.html`](what-they-heard-in-galilee.html) | One-page handout: what Jesus taught on his Galilee preaching tours |
-| [`kingdom-of-heaven-in-matthew.html`](kingdom-of-heaven-in-matthew.html) | Study page: the kingdom of heaven in the Gospel of Matthew |
+| [`seven-questions-about-the-kingdom.html`](seven-questions-about-the-kingdom.html) | Questions and answers: seven questions about the kingdom, answered from Matthew |
 | [`gospel-of-the-kingdom-of-heaven.html`](gospel-of-the-kingdom-of-heaven.html) | Reference sheet: Matthew's five discourses and the life between them |
 | [`the-faith-of-jesus.html`](the-faith-of-jesus.html) | Study page: the faith of Jesus in the Gospel of Matthew |
 
