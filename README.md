@@ -8,6 +8,7 @@ Reference sheets on the kingdom of heaven and the teaching of Jesus, drawn from 
 | [`what-they-heard-in-galilee.html`](what-they-heard-in-galilee.html) | One-page handout: what Jesus taught on his Galilee preaching tours |
 | [`kingdom-of-heaven-in-matthew.html`](kingdom-of-heaven-in-matthew.html) | Study page: the kingdom of heaven in the Gospel of Matthew |
 | [`gospel-of-the-kingdom-of-heaven.html`](gospel-of-the-kingdom-of-heaven.html) | Reference sheet: Matthew's five discourses and the life between them |
+| [`the-faith-of-jesus.html`](the-faith-of-jesus.html) | Study page: the faith of Jesus in the Gospel of Matthew |
 
 Every page is a single self-contained HTML file. Nothing needs to be built or installed; open any file in a browser to view it.
 
@@ -29,7 +30,7 @@ The empty `.nojekyll` file is only needed if the site is ever served with GitHub
 
 ## Updating a page
 
-Edit the HTML file directly, or replace it with a newer version, then commit and push. Keep the `← All reference sheets` link near the top of each page so readers can get back to the home page.
+Edit the HTML file directly, or replace it with a newer version, then commit and push. Every page starts with the same row of tabs (the `site-tabs` block between the `<!-- site-tabs -->` comments). Keep it on any replacement page, and when adding a new page, add its tab to that block on every page.
 
 ## Scripture
 

@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Faith of Jesus</title>
+<meta name="description" content="What Jesus' own faith looked like in the Gospel of Matthew, and how to share it.">
+<style>:root{color-scheme:light}*,*::before,*::after{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}.site-tabs{--st-bg:#F3EFE7;--st-ink:#2C2416;--st-muted:#6F6455;--st-rule:#E0D7C7;--st-accent:#2E3A6B;background:var(--st-bg);border-bottom:1px solid var(--st-rule);font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;font-size:14px;line-height:1.2}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .site-tabs{--st-bg:#1D1A14;--st-ink:#ECE5D8;--st-muted:#A99D8A;--st-rule:#3A3329;--st-accent:#A6B3E8}}:root[data-theme="dark"] .site-tabs{--st-bg:#1D1A14;--st-ink:#ECE5D8;--st-muted:#A99D8A;--st-rule:#3A3329;--st-accent:#A6B3E8}.site-tabs .tabs-in{max-width:1240px;margin:0 auto;padding:0 12px;display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}.site-tabs .tabs-in::-webkit-scrollbar{display:none}.site-tabs a{flex:none;display:block;padding:13px 14px 10px;color:var(--st-muted);text-decoration:none;font-weight:600;white-space:nowrap;border-bottom:3px solid transparent}.site-tabs a:first-child{margin-left:auto}.site-tabs a:last-child{margin-right:auto}.site-tabs a:hover{color:var(--st-ink)}.site-tabs a:focus-visible{outline:2px solid var(--st-accent);outline-offset:-4px}.site-tabs a[aria-current="page"]{color:var(--st-accent);border-bottom-color:var(--st-accent)}@media print{.site-tabs{display:none}}</style>
+<style>
+  /* Layout: a congregation study page in the On Jesus reference style, companion to
+     "The Kingdom of Heaven in Matthew". Six numbered marks of Jesus' own faith, each a
+     plain-language teaching with Matthew woven in and a "Read" line of linked references,
+     then how to share his faith. Accent: the On Jesus faith plum. */
+  :root {
+    --paper: #FAF8F4;
+    --ink: #2C2416;
+    --muted: #7A6E5E;
+    --rule: #E5DDD0;
+    --accent: #6B2A4A;
+    --accent-soft: #F4EAEF;
+    --serif: Georgia, 'Times New Roman', serif;
+    --sans: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #17150F; --ink: #ECE5D8; --muted: #A99D8A; --rule: #3A3329;
+      --accent: #DDA0BE; --accent-soft: #2F2029; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #17150F; --ink: #ECE5D8; --muted: #A99D8A; --rule: #3A3329;
+    --accent: #DDA0BE; --accent-soft: #2F2029; color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body { background: var(--paper); color: var(--ink); font-family: var(--serif); font-size: 1.05rem; line-height: 1.65; }
+  .wrap { max-width: 800px; margin: 0 auto; padding-inline: 22px; padding-block: 44px 80px; }
+
+  header.top { display: grid; gap: 12px; margin-bottom: 20px; }
+  .eyebrow { font-family: var(--sans); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 0; }
+  h1 { font-size: 2.6rem; font-weight: 400; line-height: 1.08; margin: 0; text-wrap: balance; }
+  .lede { margin: 0; max-width: 64ch; }
+  .lede.small { font-size: 0.95rem; color: var(--muted); }
+
+  nav.jump {
+    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+    display: flex; flex-wrap: wrap; gap: 4px 16px;
+    background: var(--paper); border-bottom: 1px solid var(--rule);
+    padding-block: 10px; margin-bottom: 26px;
+    font-family: var(--sans); font-size: 0.82rem;
+  }
+  nav.jump a { color: var(--muted); text-decoration: none; font-weight: 600; }
+  nav.jump a:hover, nav.jump a:focus-visible { color: var(--ink); text-decoration: underline; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .intro { margin: 0 0 8px; max-width: 66ch; background: var(--accent-soft); border-left: 3px solid var(--accent); padding: 12px 16px; }
+
+  section.part { display: grid; grid-template-columns: 34px 1fr; gap: 0 14px; padding-block: 26px; border-top: 2px solid var(--accent); }
+  section.part > .n { font-family: var(--sans); font-size: 1.5rem; font-weight: 300; line-height: 1.2; color: var(--accent); font-variant-numeric: tabular-nums; }
+  section.part > .body { min-width: 0; display: grid; gap: 10px; }
+  section.part.plain { grid-template-columns: 1fr; }
+  h2 { font-size: 1.5rem; font-weight: 600; margin: 0; text-wrap: balance; }
+  section.part p { margin: 0; max-width: 66ch; }
+
+  .read { font-family: var(--sans); font-size: 0.86rem; color: var(--muted); }
+  .read b { font-weight: 700; margin-right: 4px; }
+  .refs { font-family: var(--sans); font-variant-numeric: tabular-nums; }
+  .refs a { color: var(--accent); text-decoration: none; border-bottom: 1px solid color-mix(in srgb, var(--accent) 35%, transparent); white-space: nowrap; }
+  .refs a:hover { border-bottom-color: var(--accent); }
+  p .refs { font-size: 0.92em; }
+
+  .try { background: var(--accent-soft); border-left: 3px solid var(--accent); padding: 12px 16px; display: grid; gap: 6px; }
+  .try .label { font-family: var(--sans); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+
+  footer { margin-top: 30px; border-top: 1px solid var(--rule); padding-top: 14px; font-family: var(--sans); font-size: 0.76rem; color: var(--muted); display: grid; gap: 4px; }
+  footer p { margin: 0; max-width: 80ch; }
+
+  @media (max-width: 640px) {
+    .wrap { padding-inline: 16px; padding-block: 30px 60px; }
+    h1 { font-size: 2rem; }
+    section.part { grid-template-columns: 26px 1fr; gap: 0 10px; }
+  }
+  @media print {
+    nav.jump { display: none; }
+    body { background: #fff; }
+    section.part { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<!-- site-tabs -->
+<nav class="site-tabs" aria-label="Reference sheets"><div class="tabs-in"><a href="index.html" title="On Jesus reference sheets">Home</a><a href="what-they-heard-in-galilee.html" title="What They Heard in Galilee">What They Heard in Galilee</a><a href="kingdom-of-heaven-in-matthew.html" title="The Kingdom of Heaven in Matthew">Kingdom of Heaven in Matthew</a><a href="gospel-of-the-kingdom-of-heaven.html" title="The Gospel of the Kingdom of Heaven">The Five Discourses</a><a href="the-faith-of-jesus.html" title="The Faith of Jesus" aria-current="page">The Faith of Jesus</a></div></nav>
+<!-- /site-tabs -->
+
+
+<div class="wrap">
+  <header class="top">
+    <p class="eyebrow">From the Gospel of Matthew</p>
+    <h1>The Faith of Jesus</h1>
+    <p class="lede">We usually talk about faith <i>in</i> Jesus. Scripture also talks about the faith <i>of</i> Jesus: he is "the founder and perfecter of our faith" (<span class="refs">Hebrews 12:2</span>). He went first, and he lived it all the way through. This page looks at what his own faith looked like in the Gospel of Matthew, so that we can learn to share it.</p>
+    <p class="lede small">Every reference is a link. Tap one to read the passage.</p>
+  </header>
+
+  <nav class="jump" aria-label="Sections">
+    <a href="#father">His Father</a>
+    <a href="#trust">Trust</a>
+    <a href="#prayer">Prayer</a>
+    <a href="#will">The Father's will</a>
+    <a href="#one">One with the Father</a>
+    <a href="#serve">Serving</a>
+    <a href="#share">Sharing his faith</a>
+  </nav>
+
+  <p class="intro">Look at what he did. Following Jesus doesn't mean copying the outward details of his life, and it is more than agreeing with true things about him. It means sharing his faith: trusting the Father the way he trusted the Father.</p>
+
+  <section class="part" id="father">
+    <span class="n">1</span>
+    <div class="body">
+      <h2>God was his Father.</h2>
+      <p>Jesus' own name for God was Father: "I thank you, Father, Lord of heaven and earth" (11:25). He knew the Father the way only a son can: "no one knows the Son except the Father, and no one knows the Father except the Son and anyone to whom the Son chooses to reveal him" (11:27). And he shares that Father with us. He teaches us to pray, "Our Father" (6:9).</p>
+      <p class="read"><b>Read</b><span class="refs">Matthew 11:25-27; Matthew 6:9; Matthew 7:21</span></p>
+    </div>
+  </section>
+
+  <section class="part" id="trust">
+    <span class="n">2</span>
+    <div class="body">
+      <h2>He trusted the Father completely.</h2>
+      <p>In the storm, with the boat being swamped by the waves, "he was asleep" (8:24). When his frightened disciples woke him, he asked, "Why are you afraid, O you of little faith?" (8:26). In the wilderness he refused to force God's hand: "You shall not put the Lord your God to the test" (4:7). And in Gethsemane, facing the cross, he trusted the Father with what he feared most: "My Father, if it be possible, let this cup pass from me; nevertheless, not as I will, but as you will" (26:39).</p>
+      <p>Even on the cross his cry was a prayer: "My God, my God, why have you forsaken me?" (27:46). Those are the first words of Psalm 22, a psalm that goes on to say that God "has not hidden his face from him, but has heard, when he cried to him."</p>
+      <p class="read"><b>Read</b><span class="refs">Matthew 8:23-27; Matthew 4:5-7; Matthew 26:36-46; Matthew 27:46; Psalm 22:1, 24</span></p>
+    </div>
+  </section>
+
+  <section class="part" id="prayer">
+    <span class="n">3</span>
+    <div class="body">
+      <h2>He prayed.</h2>
+      <p>Whatever the day held, he went to be alone with the Father: "he went up on the mountain by himself to pray. When evening came, he was there alone" (14:23). He gave thanks to the Father out loud, "yes, Father, for such was your gracious will" (11:26), and he taught us to pray in secret: "go into your room and shut the door and pray to your Father who is in secret" (6:6). Mark adds that he rose "very early in the morning, while it was still dark" to pray (<span class="refs">Mark 1:35</span>).</p>
+      <p class="read"><b>Read</b><span class="refs">Matthew 14:23; Matthew 11:25-26; Matthew 6:5-6; Matthew 26:36</span></p>
+    </div>
+  </section>
+
+  <section class="part" id="will">
+    <span class="n">4</span>
+    <div class="body">
+      <h2>He sought and did the Father's will.</h2>
+      <p>At the Jordan he went into the water "to fulfill all righteousness" (3:15). In the wilderness he lived "by every word that comes from the mouth of God" (4:4), and he would worship and serve God alone (4:10). When Peter tried to talk him out of the cross, he answered, "you are not setting your mind on the things of God, but on the things of man" (16:23). And in the garden he prayed the words he had taught his disciples: "your will be done" (26:42).</p>
+      <p class="read"><b>Read</b><span class="refs">Matthew 3:13-15; Matthew 4:1-11; Matthew 16:21-23; Matthew 26:42; Matthew 6:10</span></p>
+    </div>
+  </section>
+
+  <section class="part" id="one">
+    <span class="n">5</span>
+    <div class="body">
+      <h2>He was one with the Father.</h2>
+      <p>At his baptism the Father's voice said, "This is my beloved Son, with whom I am well pleased" (3:17). On the mountain the same voice added, "listen to him" (17:5). Jesus said that all things had been "handed over to me by my Father" (11:27). John's Gospel records him saying it outright: "I and the Father are one," and "the Father who dwells in me does his works."</p>
+      <p class="read"><b>Read</b><span class="refs">Matthew 3:16-17; Matthew 17:5; Matthew 11:27; John 10:30; John 14:10</span></p>
+    </div>
+  </section>
+
+  <section class="part" id="serve">
+    <span class="n">6</span>
+    <div class="body">
+      <h2>He loved and served the Father's children.</h2>
+      <p>His faith turned outward. "When he saw the crowds, he had compassion for them, because they were harassed and helpless, like sheep without a shepherd" (9:36). He "had compassion on them and healed their sick" (14:14). And he summed up his own life this way: "even as the Son of Man came not to be served but to serve, and to give his life as a ransom for many" (20:28).</p>
+      <p class="read"><b>Read</b><span class="refs">Matthew 9:35-36; Matthew 14:14; Matthew 20:25-28; Matthew 11:28-30</span></p>
+    </div>
+  </section>
+
+  <section class="part plain" id="share">
+    <div class="body">
+      <h2>Sharing his faith</h2>
+      <p>Jesus invited his followers to learn his way of trusting the Father: "Take my yoke upon you, and learn from me, for I am gentle and lowly in heart" (11:29). "It is enough for the disciple to be like his teacher" (10:25). "If anyone would come after me, let him deny himself and take up his cross and follow me" (16:24).</p>
+      <p>Dallas Willard described it this way: "I am learning from Jesus to live my life as he would live my life if he were I."</p>
+      <div class="try">
+        <span class="label">One thing to try this week</span>
+        <p>He went somewhere quiet to be alone with his Father. Pick one morning this week, before the phone and before the news. Go into your room, shut the door, and pray to your Father who is in secret (6:6). Five minutes is enough. Tell him the day is his: "your will be done."</p>
+      </div>
+      <p class="read"><b>Read</b><span class="refs">Matthew 11:28-30; Matthew 10:24-25; Matthew 16:24; 1 John 2:6</span></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Scripture quotations are from the ESV&reg; Bible (The Holy Bible, English Standard Version&reg;), &copy; 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved.</p>
+    <p>Dallas Willard, <em>The Divine Conspiracy: Rediscovering Our Hidden Life in God</em> (HarperSanFrancisco, 1998).</p>
+    <p>Reference links open the passage on BibleGateway in the ESV.</p>
+    <p>On Jesus &middot; hansorun.substack.com</p>
+  </footer>
+</div>
+
+<script>
+  (function () {
+    var SINGLE = { Obadiah: 1, Philemon: 1, Jude: 1 };
+    function refQuery(seg) {
+      var m = seg.trim().match(/^((?:[1-3] )?[A-Z][a-z]+)\s+(\d+)(?::([\d,\- ]+))?$/);
+      if (!m) return null;
+      var book = m[1], ch = m[2], vs = m[3];
+      if (!vs) return SINGLE[book] ? book + ' 1:' + ch : book + ' ' + ch;
+      return vs.trim().split(/,\s*/).map(function (v) { return book + ' ' + ch + ':' + v; }).join(';');
+    }
+    var spans = document.querySelectorAll('.refs');
+    Array.prototype.forEach.call(spans, function (el) {
+      var parts = el.textContent.split(/;\s*/);
+      el.textContent = '';
+      parts.forEach(function (seg, i) {
+        if (i) el.appendChild(document.createTextNode('; '));
+        var q = refQuery(seg);
+        if (!q) { el.appendChild(document.createTextNode(seg)); return; }
+        var a = document.createElement('a');
+        a.href = 'https://www.biblegateway.com/passage/?search=' + encodeURIComponent(q) + '&version=ESV';
+        a.textContent = seg.trim();
+        a.target = '_blank';
+        a.rel = 'noopener';
+        el.appendChild(a);
+      });
+    });
+  })();
+</script>
+</body>
+</html>
