@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Kingdom of Heaven in Matthew</title>
+<meta name="description" content="What Jesus taught about the kingdom of heaven, drawn from the Gospel of Matthew.">
+<style>:root{color-scheme:light}*,*::before,*::after{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}.site-back{max-width:800px;margin:0 auto;padding:14px 22px 0;font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;font-size:13px}.site-back a{color:var(--muted);text-decoration:none;font-weight:600}.site-back a:hover,.site-back a:focus-visible{text-decoration:underline}@media print{.site-back{display:none}}</style>
+<style>
+  /* Layout: a congregation study page in the On Jesus reference style. Seven sections, each
+     a plain-language teaching with the words of Matthew woven in and a "Read" line of linked
+     references underneath. Palette: On Jesus paper and ink, kingdom navy. */
+  :root {
+    --paper: #FAF8F4;
+    --ink: #2C2416;
+    --muted: #7A6E5E;
+    --rule: #E5DDD0;
+    --kingdom: #2E3A6B;
+    --kingdom-soft: #EDEFF6;
+    --serif: Georgia, 'Times New Roman', serif;
+    --sans: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #17150F; --ink: #ECE5D8; --muted: #A99D8A; --rule: #3A3329;
+      --kingdom: #A6B3E8; --kingdom-soft: #20253C; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #17150F; --ink: #ECE5D8; --muted: #A99D8A; --rule: #3A3329;
+    --kingdom: #A6B3E8; --kingdom-soft: #20253C; color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body { background: var(--paper); color: var(--ink); font-family: var(--serif); font-size: 1.05rem; line-height: 1.65; }
+  .wrap { max-width: 800px; margin: 0 auto; padding-inline: 22px; padding-block: 44px 80px; }
+
+  header.top { display: grid; gap: 12px; margin-bottom: 20px; }
+  .eyebrow { font-family: var(--sans); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 0; }
+  h1 { font-size: 2.6rem; font-weight: 400; line-height: 1.08; margin: 0; text-wrap: balance; }
+  .lede { margin: 0; max-width: 64ch; }
+  .lede.small { font-size: 0.95rem; color: var(--muted); }
+
+  nav.jump {
+    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+    display: flex; flex-wrap: wrap; gap: 4px 16px;
+    background: var(--paper); border-bottom: 1px solid var(--rule);
+    padding-block: 10px; margin-bottom: 26px;
+    font-family: var(--sans); font-size: 0.82rem;
+  }
+  nav.jump a { color: var(--muted); text-decoration: none; font-weight: 600; }
+  nav.jump a:hover, nav.jump a:focus-visible { color: var(--ink); text-decoration: underline; }
+  a:focus-visible { outline: 2px solid var(--kingdom); outline-offset: 2px; }
+
+  section.part { display: grid; gap: 16px; padding-block: 28px; border-top: 2px solid var(--kingdom); }
+  h2 { font-size: 1.65rem; font-weight: 600; margin: 0; text-wrap: balance; }
+  .intro { margin: 0; max-width: 66ch; background: var(--kingdom-soft); border-left: 3px solid var(--kingdom); padding: 12px 16px; }
+
+  .point { display: grid; gap: 6px; }
+  .point h3 { font-size: 1.12rem; font-weight: 600; margin: 0; }
+  .point p { margin: 0; max-width: 66ch; }
+  ol.points { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; counter-reset: pt; }
+  ol.points > li { counter-increment: pt; display: grid; grid-template-columns: 30px 1fr; gap: 0 12px; }
+  ol.points > li::before { content: counter(pt); font-family: var(--sans); font-size: 1.3rem; font-weight: 300; line-height: 1.3; color: var(--kingdom); font-variant-numeric: tabular-nums; }
+  ol.points > li > .point { min-width: 0; }
+
+  .read { margin: 0; font-family: var(--sans); font-size: 0.86rem; color: var(--muted); }
+  .read b { font-weight: 700; color: var(--muted); margin-right: 4px; }
+  .refs { font-family: var(--sans); font-variant-numeric: tabular-nums; }
+  .refs a { color: var(--kingdom); text-decoration: none; border-bottom: 1px solid color-mix(in srgb, var(--kingdom) 35%, transparent); white-space: nowrap; }
+  .refs a:hover { border-bottom-color: var(--kingdom); }
+  p .refs { font-size: 0.92em; }
+
+  footer { margin-top: 30px; border-top: 1px solid var(--rule); padding-top: 14px; font-family: var(--sans); font-size: 0.76rem; color: var(--muted); display: grid; gap: 4px; }
+  footer p { margin: 0; max-width: 80ch; }
+
+  @media (max-width: 640px) {
+    .wrap { padding-inline: 16px; padding-block: 30px 60px; }
+    h1 { font-size: 2rem; }
+    ol.points > li { grid-template-columns: 24px 1fr; }
+  }
+  @media print {
+    nav.jump { display: none; }
+    body { background: #fff; }
+    ol.points > li, .point { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<nav class="site-back" aria-label="Site"><a href="./">&larr; All reference sheets</a></nav>
+
+
+<div class="wrap">
+  <header class="top">
+    <p class="eyebrow">From the Gospel of Matthew</p>
+    <h1>The Kingdom of Heaven</h1>
+    <p class="lede">What Jesus taught about the kingdom, drawn from Matthew. Matthew is the Gospel of the kingdom of heaven: it uses that phrase more than thirty times, where Mark and Luke say "the kingdom of God." They are the same kingdom. Jesus uses both names in a single breath in <span class="refs">Matthew 19:23-24</span>.</p>
+    <p class="lede small">Every reference is a link. Tap one to read the passage.</p>
+  </header>
+
+  <nav class="jump" aria-label="Sections">
+    <a href="#what">What it is</a>
+    <a href="#promised">What the prophets promised</a>
+    <a href="#taught">What Jesus taught</a>
+    <a href="#now">Now and to come</a>
+    <a href="#enter">How to enter</a>
+    <a href="#sin">Sin and forgiveness</a>
+    <a href="#family">One family</a>
+  </nav>
+
+  <!-- 1 -->
+  <section class="part" id="what">
+    <h2>What is the kingdom of heaven?</h2>
+    <p class="intro">At its heart are three things, and all three are received by faith.</p>
+    <ol class="points">
+      <li><div class="point">
+        <h3>God reigns.</h3>
+        <p>He is "Lord of heaven and earth" (11:25), and Jesus teaches us to pray for his reign: "Your kingdom come, your will be done, on earth as it is in heaven" (6:10).</p>
+        <p class="read"><b>Read</b><span class="refs">Matthew 11:25; Matthew 6:9-10</span></p>
+      </div></li>
+      <li><div class="point">
+        <h3>We are his children.</h3>
+        <p>Jesus teaches us to call God "Our Father" (6:9). Peacemakers "shall be called sons of God" (5:9). A father who gives good gifts to his children is his picture of how God treats us (7:11).</p>
+        <p class="read"><b>Read</b><span class="refs">Matthew 6:9; Matthew 5:9; Matthew 5:45; Matthew 7:11</span></p>
+      </div></li>
+      <li><div class="point">
+        <h3>We want to do his will and become like him.</h3>
+        <p>"You therefore must be perfect, as your heavenly Father is perfect" (5:48). Jesus' own family are those who do his Father's will (12:50).</p>
+        <p class="read"><b>Read</b><span class="refs">Matthew 5:48; Matthew 7:21; Matthew 12:50</span></p>
+      </div></li>
+    </ol>
+    <div class="point">
+      <h3>Open to anyone who believes.</h3>
+      <p>When a Roman centurion trusted him, Jesus said, "with no one in Israel have I found such faith," and promised that many would come "from east and west" to sit at table in the kingdom of heaven (8:10-11).</p>
+      <p class="read"><b>Read</b><span class="refs">Matthew 8:10-11</span></p>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="part" id="promised">
+    <h2>The kingdom the prophets promised</h2>
+    <p class="intro">Jesus' hearers already had two pictures of God's kingdom from their Scriptures: a kingdom that is real now, and a kingdom still to come. Jesus taught both.</p>
+    <div class="point">
+      <h3>God reigns now.</h3>
+      <p>Jesus speaks of heaven as "the throne of God" and of Jerusalem as "the city of the great King" (5:34-35). The Lord was already King.</p>
+      <p class="read"><b>Read</b><span class="refs">Matthew 5:34-35</span></p>
+    </div>
+    <div class="point">
+      <h3>A King still to come.</h3>
+      <p>The prophets looked ahead to a ruler God would send, and Matthew shows that hope arriving in Jesus: the ruler from Bethlehem "who will shepherd my people Israel" (2:6, from Micah 5:2); the servant on whom God puts his Spirit (12:18-21, from Isaiah 42:1-4); the king who comes humble, riding on a donkey (21:5, from Zechariah 9:9).</p>
+      <p class="read"><b>Read</b><span class="refs">Matthew 2:6; Micah 5:2; Matthew 12:18-21; Isaiah 42:1-4; Matthew 21:5; Zechariah 9:9</span></p>
+    </div>
+    <div class="point">
+      <h3>John prepared the way.</h3>
+      <p>John the Baptist announced it first: "Repent, for the kingdom of heaven is at hand" (3:2).</p>
+      <p class="read"><b>Read</b><span class="refs">Matthew 3:1-12</span></p>
+    </div>
+    <div class="point">
+      <h3>One who comes from heaven.</h3>
+      <p>Daniel saw "one like a son of man" coming with the clouds of heaven to receive an everlasting kingdom (Daniel 7:13-14). Jesus took that picture as his own: "you will see the Son of Man... coming on the clouds of heaven" (26:64).</p>
+      <p class="read"><b>Read</b><span class="refs">Daniel 7:13-14; Matthew 24:30; Matthew 26:64</span></p>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="part" id="taught">
+    <h2>What Jesus taught about the kingdom</h2>
+    <p class="intro">It begins with God as our Father and all of us as his family (<span class="refs">Matthew 6:9; Matthew 23:8-9; Matthew 12:49-50</span>). His love reaches even the people we find hardest to love, "for he makes his sun rise on the evil and on the good" (5:45). Knowing that sets us free from fear: "Fear not, therefore; you are of more value than many sparrows" (10:31). And the kingdom brings real gifts:</p>
+    <ol class="points">
+      <li><div class="point">
+        <h3>Courage, and the hope of eternal life.</h3>
+        <p>"Take heart; it is I. Do not be afraid" (14:27). Everyone who leaves things behind for his sake "will inherit eternal life" (19:29).</p>
+        <p class="read"><b>Read</b><span class="refs">Matthew 14:27; Matthew 10:26-31; Matthew 11:28-30; Matthew 19:29</span></p>
+      </div></li>
+      <li><div class="point">
+        <h3>Good news for everyone, even the poor.</h3>
+        <p>"Blessed are the poor in spirit, for theirs is the kingdom of heaven" (5:3), and "the poor have good news preached to them" (11:5).</p>
+        <p class="read"><b>Read</b><span class="refs">Matthew 5:3; Matthew 11:5; Matthew 11:28</span></p>
+      </div></li>
+      <li><div class="point">
+        <h3>A new way to live together.</h3>
+        <p>Again and again Jesus says, "You have heard that it was said... But I say to you" (5:21-48), and he sums it up: treat others the way you want to be treated (7:12). In his kingdom, "whoever would be great among you must be your servant" (20:26).</p>
+        <p class="read"><b>Read</b><span class="refs">Matthew 5:21-48; Matthew 7:12; Matthew 20:25-28</span></p>
+      </div></li>
+      <li><div class="point">
+        <h3>The spiritual before the material.</h3>
+        <p>"Man shall not live by bread alone, but by every word that comes from the mouth of God" (4:4). "You cannot serve God and money" (6:24). "For what will it profit a man if he gains the whole world and forfeits his soul?" (16:26).</p>
+        <p class="read"><b>Read</b><span class="refs">Matthew 4:4; Matthew 6:24; Matthew 16:26</span></p>
+      </div></li>
+      <li><div class="point">
+        <h3>A true goal, and the worth of every person.</h3>
+        <p>Lay up treasure in heaven, "for where your treasure is, there your heart will be also" (6:21), and seek his kingdom first (6:33). No one is too small to matter: "it is not the will of my Father who is in heaven that one of these little ones should perish" (18:14).</p>
+        <p class="read"><b>Read</b><span class="refs">Matthew 6:19-21; Matthew 6:33; Matthew 13:44-46; Matthew 6:26; Matthew 18:12-14</span></p>
+      </div></li>
+      <li><div class="point">
+        <h3>Faithful living matters forever.</h3>
+        <p>God sees and rewards faithfulness: "Well done, good and faithful servant" (25:21). His reward is generosity, not wages earned. In the parable of the workers in the vineyard, the landowner asks, "do you begrudge my generosity?" (20:15).</p>
+        <p class="read"><b>Read</b><span class="refs">Matthew 5:10-16; Matthew 25:21; Matthew 20:1-16</span></p>
+      </div></li>
+      <li><div class="point">
+        <h3>God's great purpose for his children.</h3>
+        <p>"Come, you who are blessed by my Father, inherit the kingdom prepared for you from the foundation of the world" (25:34). "Then the righteous will shine like the sun in the kingdom of their Father" (13:43).</p>
+        <p class="read"><b>Read</b><span class="refs">Matthew 25:34; Matthew 13:43</span></p>
+      </div></li>
+    </ol>
+  </section>
+
+  <!-- 4 -->
+  <section class="part" id="now">
+    <h2>The kingdom now, and the kingdom to come</h2>
+    <div class="point">
+      <h3>Now.</h3>
+      <p>Wherever God's will is done and neighbors are loved, the kingdom is already here: "if it is by the Spirit of God that I cast out demons, then the kingdom of God has come upon you" (12:28). It starts small and grows, like a mustard seed and like leaven in dough (13:31-33). It shows in good fruit (7:16-20) and in love for God and neighbor (22:37-40).</p>
+      <p class="read"><b>Read</b><span class="refs">Matthew 12:28; Matthew 6:10; Matthew 13:31-33; Matthew 7:16-21; Matthew 22:37-40; Matthew 25:35-40</span></p>
+    </div>
+    <div class="point">
+      <h3>To come.</h3>
+      <p>Its fullness is still ahead: the Son of Man coming in his glory (25:31-34), the pure in heart who "shall see God" (5:8), and the day Jesus promised to drink the cup new with his friends "in my Father's kingdom" (26:29).</p>
+      <p class="read"><b>Read</b><span class="refs">Matthew 25:31-34; Matthew 24:30-31; Matthew 5:8; Matthew 26:29; Matthew 8:11</span></p>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section class="part" id="enter">
+    <h2>How to enter</h2>
+    <p class="intro">The kingdom is entered now, and the door is open to anyone. Jesus told the religious leaders, "the tax collectors and the prostitutes go into the kingdom of God before you" (<span class="refs">Matthew 21:31</span>). He names two things.</p>
+    <ol class="points">
+      <li><div class="point">
+        <h3>Trust like a child.</h3>
+        <p>"Unless you turn and become like children, you will never enter the kingdom of heaven" (18:3). Children receive; they don't earn. God has "revealed them to little children" (11:25), and he gives good things to those who ask him (7:11).</p>
+        <p class="read"><b>Read</b><span class="refs">Matthew 18:2-4; Matthew 19:13-14; Matthew 11:25; Matthew 7:11</span></p>
+      </div></li>
+      <li><div class="point">
+        <h3>Hunger for God.</h3>
+        <p>"Blessed are those who hunger and thirst for righteousness, for they shall be satisfied" (5:6). "Repent" (4:17): the word means a change of mind, a turning toward God. "Seek, and you will find" (7:7).</p>
+        <p class="read"><b>Read</b><span class="refs">Matthew 5:6; Matthew 4:17; Matthew 7:7-8; Matthew 13:45-46</span></p>
+      </div></li>
+    </ol>
+  </section>
+
+  <!-- 6 -->
+  <section class="part" id="sin">
+    <h2>Sin and forgiveness</h2>
+    <div class="point">
+      <h3>Sin begins in the heart and the will.</h3>
+      <p>"What comes out of the mouth proceeds from the heart, and this defiles a person" (15:18). Over Jerusalem Jesus grieved, "How often would I have gathered your children together as a hen gathers her brood under her wings, and you were not willing!" (23:37).</p>
+      <p class="read"><b>Read</b><span class="refs">Matthew 15:18-19; Matthew 23:37</span></p>
+    </div>
+    <div class="point">
+      <h3>Forgiven as we forgive.</h3>
+      <p>God forgives freely. To a paralyzed man Jesus said, "Take heart, my son; your sins are forgiven" (9:2). And we receive God's forgiveness as we forgive others: "For if you forgive others their trespasses, your heavenly Father will also forgive you" (6:14).</p>
+      <p class="read"><b>Read</b><span class="refs">Matthew 9:2-6; Matthew 6:12, 14-15; Matthew 18:21-35</span></p>
+    </div>
+  </section>
+
+  <!-- 7 -->
+  <section class="part" id="family">
+    <h2>One family</h2>
+    <div class="point">
+      <p>Pointing to his disciples, Jesus said, "whoever does the will of my Father in heaven is my brother and sister and mother" (12:50). His love reaches beyond any circle: love your enemies "so that you may be sons of your Father who is in heaven" (5:45). "You shall love your neighbor as yourself" (22:39). And whatever we do for "one of the least of these my brothers," we do for him (25:40).</p>
+      <p class="read"><b>Read</b><span class="refs">Matthew 12:49-50; Matthew 5:43-48; Matthew 22:39; Matthew 7:12; Matthew 25:40</span></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Scripture quotations are from the ESV&reg; Bible (The Holy Bible, English Standard Version&reg;), &copy; 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved.</p>
+    <p>Reference links open the passage on BibleGateway in the ESV.</p>
+    <p>On Jesus &middot; hansorun.substack.com</p>
+  </footer>
+</div>
+
+<script>
+  (function () {
+    var SINGLE = { Obadiah: 1, Philemon: 1, Jude: 1 };
+    function refQuery(seg) {
+      var m = seg.trim().match(/^((?:[1-3] )?[A-Z][a-z]+)\s+(\d+)(?::([\d,\- ]+))?$/);
+      if (!m) return null;
+      var book = m[1], ch = m[2], vs = m[3];
+      if (!vs) return SINGLE[book] ? book + ' 1:' + ch : book + ' ' + ch;
+      return vs.trim().split(/,\s*/).map(function (v) { return book + ' ' + ch + ':' + v; }).join(';');
+    }
+    var spans = document.querySelectorAll('.refs');
+    Array.prototype.forEach.call(spans, function (el) {
+      var parts = el.textContent.split(/;\s*/);
+      el.textContent = '';
+      parts.forEach(function (seg, i) {
+        if (i) el.appendChild(document.createTextNode('; '));
+        var q = refQuery(seg);
+        if (!q) { el.appendChild(document.createTextNode(seg)); return; }
+        var a = document.createElement('a');
+        a.href = 'https://www.biblegateway.com/passage/?search=' + encodeURIComponent(q) + '&version=ESV';
+        a.textContent = seg.trim();
+        a.target = '_blank';
+        a.rel = 'noopener';
+        el.appendChild(a);
+      });
+    });
+  })();
+</script>
+</body>
+</html>

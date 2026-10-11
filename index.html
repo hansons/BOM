@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>On Jesus Reference Sheets</title>
+<meta name="description" content="Reference sheets on the kingdom of heaven and the teaching of Jesus, drawn from the Gospels.">
+<style>
+  /* Layout: a short library shelf. Header, then three entries in reading order, each with
+     its kind, title, what it covers, and how to use it. On Jesus paper, ink and kingdom navy. */
+  :root {
+    color-scheme: light;
+    --paper: #FAF8F4;
+    --card: #FFFFFF;
+    --ink: #2C2416;
+    --muted: #7A6E5E;
+    --rule: #E5DDD0;
+    --kingdom: #2E3A6B;
+    --serif: Georgia, 'Times New Roman', serif;
+    --sans: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #17150F; --card: #211E17; --ink: #ECE5D8; --muted: #A99D8A; --rule: #3A3329;
+      --kingdom: #A6B3E8; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #17150F; --card: #211E17; --ink: #ECE5D8; --muted: #A99D8A; --rule: #3A3329;
+    --kingdom: #A6B3E8; color-scheme: dark;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--serif); font-size: 1.05rem; line-height: 1.6; }
+  .wrap { max-width: 780px; margin: 0 auto; padding-inline: 22px; padding-block: 56px 72px; }
+
+  header { display: grid; gap: 12px; padding-bottom: 22px; border-bottom: 2px solid var(--kingdom); }
+  .eyebrow { font-family: var(--sans); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 0; }
+  h1 { font-size: 2.5rem; font-weight: 400; line-height: 1.1; margin: 0; text-wrap: balance; }
+  .lede { margin: 0; max-width: 60ch; }
+  .verse { margin: 4px 0 0; font-style: italic; color: var(--muted); max-width: 62ch; }
+  .verse cite { font-style: normal; font-family: var(--sans); font-size: 0.8rem; font-weight: 700; color: var(--kingdom); margin-left: 6px; }
+
+  ol.shelf { list-style: none; margin: 0; padding: 0; counter-reset: s; }
+  ol.shelf li { counter-increment: s; display: grid; grid-template-columns: 40px 1fr; gap: 0 14px; padding-block: 26px; border-bottom: 1px solid var(--rule); }
+  ol.shelf li::before { content: counter(s); font-family: var(--sans); font-size: 1.6rem; font-weight: 300; line-height: 1.2; color: var(--kingdom); font-variant-numeric: tabular-nums; }
+  .entry { min-width: 0; display: grid; gap: 6px; }
+  .kind { font-family: var(--sans); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--kingdom); margin: 0; }
+  h2 { font-size: 1.5rem; font-weight: 600; margin: 0; line-height: 1.2; text-wrap: balance; }
+  h2 a { color: inherit; text-decoration: none; border-bottom: 2px solid transparent; }
+  h2 a:hover, h2 a:focus-visible { border-bottom-color: var(--kingdom); }
+  a:focus-visible { outline: 2px solid var(--kingdom); outline-offset: 3px; }
+  .entry p { margin: 0; max-width: 62ch; }
+  .use { font-family: var(--sans); font-size: 0.86rem; color: var(--muted); }
+
+  footer { margin-top: 30px; font-family: var(--sans); font-size: 0.76rem; color: var(--muted); display: grid; gap: 4px; }
+  footer p { margin: 0; max-width: 80ch; }
+
+  @media (max-width: 520px) {
+    .wrap { padding-inline: 16px; padding-block: 36px 56px; }
+    h1 { font-size: 2rem; }
+    ol.shelf li { grid-template-columns: 30px 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="eyebrow">On Jesus &middot; reference sheets</p>
+    <h1>The Gospel of the Kingdom</h1>
+    <p class="lede">Three references on what Jesus proclaimed: the kingdom of heaven. Every Scripture reference on these pages links to the passage, so you can read it for yourself.</p>
+    <p class="verse">"And he went throughout all Galilee, teaching in their synagogues and proclaiming the gospel of the kingdom and healing every disease and every affliction among the people." <cite>Matthew 4:23</cite></p>
+  </header>
+
+  <ol class="shelf">
+    <li>
+      <div class="entry">
+        <p class="kind">One-page handout</p>
+        <h2><a href="what-they-heard-in-galilee.html">What They Heard in Galilee</a></h2>
+        <p>What Jesus taught as he went from town to town: how he taught on the road, ten teachings of the gospel of the kingdom with a key verse for each, and where to read more.</p>
+        <p class="use">Prints on a single page.</p>
+      </div>
+    </li>
+    <li>
+      <div class="entry">
+        <p class="kind">Study page</p>
+        <h2><a href="kingdom-of-heaven-in-matthew.html">The Kingdom of Heaven in Matthew</a></h2>
+        <p>What the kingdom is, what the prophets promised, what Jesus taught about it, how to enter, and what it means to live in it now and in the age to come, drawn from the Gospel of Matthew.</p>
+        <p class="use">Best read straight through; the section menu jumps to any part.</p>
+      </div>
+    </li>
+    <li>
+      <div class="entry">
+        <p class="kind">Reference sheet</p>
+        <h2><a href="gospel-of-the-kingdom-of-heaven.html">The Gospel of the Kingdom of Heaven</a></h2>
+        <p>Matthew read as five books: the five great discourses, the life told between them, and the people and commands around them.</p>
+        <p class="use">Tap a chapter on the map to jump to it, and highlight every parable or mighty work.</p>
+      </div>
+    </li>
+  </ol>
+
+  <footer>
+    <p>Scripture quotations are from the ESV&reg; Bible (The Holy Bible, English Standard Version&reg;), &copy; 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved.</p>
+    <p>On Jesus &middot; hansorun.substack.com</p>
+  </footer>
+</div>
+</body>
+</html>

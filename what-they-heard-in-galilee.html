@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>What They Heard in Galilee</title>
+<meta name="description" content="One-page handout on what Jesus taught on his Galilee preaching tours, with key verses from the Gospels.">
+<style>:root{color-scheme:light}*,*::before,*::after{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}.site-back{max-width:880px;margin:0 auto;padding:14px 22px 0;font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;font-size:13px}.site-back a{color:var(--muted);text-decoration:none;font-weight:600}.site-back a:hover,.site-back a:focus-visible{text-decoration:underline}@media print{.site-back{display:none}}</style>
+<style>
+  /* Layout: a one-page handout. Header with the Matthew 4:23 frame, a strip of how he taught
+     on the road, ten teachings in two columns (each: statement, one verse, where to read more),
+     and a reading list. Prints to one US letter page. Palette follows the On Jesus sheets. */
+  :root {
+    --paper: #FBFAF7;
+    --ink: #2C2416;
+    --muted: #6F6455;
+    --rule: #E3DACB;
+    --accent: #2E3A6B;
+    --accent-soft: #EEF0F7;
+    --serif: Georgia, 'Times New Roman', serif;
+    --sans: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #17150F; --ink: #ECE5D8; --muted: #A99D8A; --rule: #3A3329;
+      --accent: #A6B3E8; --accent-soft: #222740; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #17150F; --ink: #ECE5D8; --muted: #A99D8A; --rule: #3A3329;
+    --accent: #A6B3E8; --accent-soft: #222740; color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body { background: var(--paper); color: var(--ink); font-family: var(--serif); font-size: 1rem; line-height: 1.5; }
+  .page { max-width: 880px; margin: 0 auto; padding-inline: 22px; padding-block: 36px 56px; display: grid; gap: 22px; }
+
+  header { display: grid; gap: 8px; border-bottom: 2px solid var(--accent); padding-bottom: 16px; }
+  .eyebrow { font-family: var(--sans); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 0; }
+  h1 { font-size: 2.2rem; font-weight: 400; line-height: 1.1; margin: 0; text-wrap: balance; }
+  .frame { margin: 0; font-style: italic; max-width: 70ch; }
+  .frame cite { font-style: normal; font-family: var(--sans); font-size: 0.78rem; font-weight: 700; color: var(--accent); margin-left: 6px; white-space: nowrap; }
+
+  /* How he taught */
+  .road { display: grid; gap: 8px; }
+  .road h2, .read h2 { font-family: var(--sans); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin: 0; }
+  ul.facts { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px 22px; }
+  ul.facts li { font-size: 0.9rem; min-width: 0; }
+  ul.facts b { font-family: var(--sans); font-size: 0.74rem; font-weight: 700; color: var(--muted); font-variant-numeric: tabular-nums; display: block; }
+
+  /* Ten teachings */
+  ol.teachings { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 32px; counter-reset: t; }
+  ol.teachings li { counter-increment: t; display: grid; grid-template-columns: 34px 1fr; gap: 0 10px; padding-block: 12px; border-top: 1px solid var(--rule); min-width: 0; }
+  ol.teachings li::before {
+    content: counter(t); font-family: var(--sans); font-size: 1.5rem; font-weight: 300; line-height: 1;
+    color: var(--accent); font-variant-numeric: tabular-nums; padding-top: 2px;
+  }
+  .t-body { min-width: 0; display: grid; gap: 4px; align-content: start; }
+  .t-body h3 { font-size: 1.05rem; font-weight: 600; margin: 0; text-wrap: balance; }
+  .t-body blockquote { margin: 0; font-style: italic; font-size: 0.95rem; }
+  .t-body blockquote cite { font-style: normal; font-family: var(--sans); font-size: 0.74rem; font-weight: 700; color: var(--accent); margin-left: 4px; white-space: nowrap; }
+  .t-body .more { margin: 0; font-family: var(--sans); font-size: 0.76rem; color: var(--muted); }
+  .t-body .more b { font-weight: 700; }
+  .t-body .aside { margin: 0; font-size: 0.86rem; color: var(--muted); }
+
+  /* Read it yourself */
+  .read { background: var(--accent-soft); padding: 14px 18px; display: grid; gap: 8px; }
+  ul.reading { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px 22px; }
+  ul.reading li { font-size: 0.9rem; min-width: 0; }
+  ul.reading b { font-family: var(--sans); font-size: 0.8rem; font-weight: 700; font-variant-numeric: tabular-nums; display: block; }
+
+  footer { font-family: var(--sans); font-size: 0.7rem; color: var(--muted); display: grid; gap: 3px; }
+  footer p { margin: 0; }
+
+  @media (max-width: 720px) {
+    ul.facts, ul.reading { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    ol.teachings { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 460px) {
+    .page { padding-inline: 16px; padding-block: 26px 44px; }
+    h1 { font-size: 1.8rem; }
+    ul.facts, ul.reading { grid-template-columns: 1fr; }
+  }
+
+  @page { size: letter; margin: 0.4in 0.45in; }
+  @media print {
+    :root { --paper: #FFFFFF; --ink: #1E1910; --muted: #5E5446; --rule: #D9CFBF; --accent: #2E3A6B; --accent-soft: #EEF0F7; }
+    html { font-size: 9pt; }
+    body { font-size: 1rem; line-height: 1.38; }
+    .page { max-width: none; padding: 0; gap: 10pt; }
+    header { padding-bottom: 8pt; gap: 4pt; }
+    h1 { font-size: 20pt; }
+    ul.facts, ul.reading { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    ol.teachings { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    ol.teachings li { padding-block: 5pt; break-inside: avoid; }
+    ol.teachings li::before { font-size: 15pt; }
+    .t-body h3 { font-size: 10pt; }
+    .t-body blockquote { font-size: 9pt; }
+    .read { padding: 8pt 10pt; }
+    footer { font-size: 6.8pt; }
+  }
+</style>
+</head>
+<body>
+<nav class="site-back" aria-label="Site"><a href="./">&larr; All reference sheets</a></nav>
+
+
+<div class="page">
+  <header>
+    <p class="eyebrow">The Life and the Message &middot; the gospel Jesus preached on the road</p>
+    <h1>What They Heard in Galilee</h1>
+    <p class="frame">"And he went throughout all Galilee, teaching in their synagogues and proclaiming the gospel of the kingdom and healing every disease and every affliction among the people." <cite>Matthew 4:23</cite></p>
+  </header>
+
+  <section class="road" aria-labelledby="road-title">
+    <h2 id="road-title">How he taught on the road</h2>
+    <ul class="facts">
+      <li><b>Mark 1:38-39</b>Town to town: "that is why I came out."</li>
+      <li><b>Matt 4:23; 5:1; Mark 4:1</b>In synagogues, on hillsides, from a boat.</li>
+      <li><b>Matt 4:23-24</b>Healing the sick as he went.</li>
+      <li><b>Luke 8:1-3</b>Women he had healed traveled with him and paid for the work.</li>
+      <li><b>Matt 10:7; Mark 6:7-13</b>He sent the twelve out two by two with the same message.</li>
+      <li><b>Mark 3:7-8; Luke 6:17</b>Crowds came from far off, even from the coast of Tyre and Sidon.</li>
+    </ul>
+  </section>
+
+  <ol class="teachings">
+    <li>
+      <div class="t-body">
+        <h3>The kingdom of God is at hand.</h3>
+        <blockquote>"The time is fulfilled, and the kingdom of God is at hand; repent and believe in the gospel." <cite>Mark 1:15</cite></blockquote>
+        <p class="more"><b>Read more:</b> Matt 4:17; Matt 10:7, the same words the twelve preached.</p>
+      </div>
+    </li>
+    <li>
+      <div class="t-body">
+        <h3>It has already come among you.</h3>
+        <blockquote>"But if it is by the Spirit of God that I cast out demons, then the kingdom of God has come upon you." <cite>Matt 12:28</cite></blockquote>
+        <p class="more"><b>Read more:</b> Luke 17:20-21, "the kingdom of God is in the midst of you" (said later, on the border of Galilee).</p>
+      </div>
+    </li>
+    <li>
+      <div class="t-body">
+        <h3>The kingdom is God's will, done.</h3>
+        <blockquote>"Your kingdom come, your will be done, on earth as it is in heaven." <cite>Matt 6:10</cite></blockquote>
+        <p class="aside">One request said twice. Dallas Willard: the kingdom is "the range of his effective will, where what he wants done is done."</p>
+        <p class="more"><b>Read more:</b> Matt 7:21; Matt 12:50.</p>
+      </div>
+    </li>
+    <li>
+      <div class="t-body">
+        <h3>God is your Father, and he knows you.</h3>
+        <blockquote>"Your Father knows what you need before you ask him." <cite>Matt 6:8</cite></blockquote>
+        <p class="more"><b>Read more:</b> Matt 6:26-32, the birds and the lilies; Matt 7:9-11; Matt 5:45.</p>
+      </div>
+    </li>
+    <li>
+      <div class="t-body">
+        <h3>It is good news for the poor.</h3>
+        <blockquote>"Blessed are you who are poor, for yours is the kingdom of God." <cite>Luke 6:20</cite></blockquote>
+        <p class="more"><b>Read more:</b> Matt 5:3-10, the Beatitudes; Luke 4:18.</p>
+      </div>
+    </li>
+    <li>
+      <div class="t-body">
+        <h3>You enter by turning, like a child.</h3>
+        <blockquote>"Unless you turn and become like children, you will never enter the kingdom of heaven." <cite>Matt 18:3</cite></blockquote>
+        <p class="more"><b>Read more:</b> Mark 1:15, repent and believe; Matt 5:3.</p>
+      </div>
+    </li>
+    <li>
+      <div class="t-body">
+        <h3>Its people live like their Father.</h3>
+        <blockquote>"Be merciful, even as your Father is merciful." <cite>Luke 6:36</cite></blockquote>
+        <p class="more"><b>Read more:</b> Matt 5:43-48, love your enemies; Matt 6:12, 14-15, forgive; Matt 7:12, the golden rule.</p>
+      </div>
+    </li>
+    <li>
+      <div class="t-body">
+        <h3>Seek it first. It is worth everything.</h3>
+        <blockquote>"But seek first the kingdom of God and his righteousness, and all these things will be added to you." <cite>Matt 6:33</cite></blockquote>
+        <p class="more"><b>Read more:</b> Matt 6:19-21, 24-34; Matt 13:44-46, the treasure and the pearl.</p>
+      </div>
+    </li>
+    <li>
+      <div class="t-body">
+        <h3>It grows from small seed.</h3>
+        <blockquote>"The kingdom of heaven is like a grain of mustard seed that a man took and sowed in his field." <cite>Matt 13:31</cite></blockquote>
+        <p class="more"><b>Read more:</b> Matt 13:3-23, the sower; Matt 13:33, the leaven; Mark 4:26-29.</p>
+      </div>
+    </li>
+    <li>
+      <div class="t-body">
+        <h3>Hear it, and do it.</h3>
+        <blockquote>"Everyone then who hears these words of mine and does them will be like a wise man who built his house on the rock." <cite>Matt 7:24</cite></blockquote>
+        <p class="more"><b>Read more:</b> Matt 7:21-27; Matt 12:50, "whoever does the will of my Father in heaven is my brother and sister and mother."</p>
+      </div>
+    </li>
+  </ol>
+
+  <section class="read" aria-labelledby="read-title">
+    <h2 id="read-title">Read it for yourself</h2>
+    <ul class="reading">
+      <li><b>Matthew 4:23&ndash;7:29</b>The Sermon on the Mount, framed by the Galilee tour</li>
+      <li><b>Luke 6:17-49</b>The Sermon on the Plain</li>
+      <li><b>Matthew 13; Mark 4</b>The parables by the lake</li>
+      <li><b>Matthew 10</b>The twelve sent out</li>
+      <li><b>Mark 1:14-39</b>The tour begins</li>
+      <li><b>Luke 4:14-44; 8:1-3</b>Nazareth, the next towns, and the women on the road</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>Scripture quotations are from the ESV&reg; Bible (The Holy Bible, English Standard Version&reg;), &copy; 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved.</p>
+    <p>Dallas Willard, <em>The Divine Conspiracy: Rediscovering Our Hidden Life in God</em> (HarperSanFrancisco, 1998).</p>
+  </footer>
+</div>
+</body>
+</html>

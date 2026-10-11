@@ -1,0 +1,796 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Gospel of the Kingdom of Heaven</title>
+<meta name="description" content="Matthew read as five books: the five great discourses, the life told between them, and the people and commands around them.">
+<style>:root{color-scheme:light}*,*::before,*::after{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}.site-back{max-width:1240px;margin:0 auto;padding:14px clamp(16px, 4vw, 48px) 0;font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;font-size:13px}.site-back a{color:var(--muted);text-decoration:none;font-weight:600}.site-back a:hover,.site-back a:focus-visible{text-decoration:underline}@media print{.site-back{display:none}}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: Matthew read as five books. Each book is narrative (left, quieter) then discourse (right, the card),
+   closed by Matthew's own refrain, "when Jesus had finished these sayings", set full width as the hinge. */
+:root {
+  --bg: #FAF8F4;
+  --paper: #FFFFFF;
+  --ink: #2C2416;
+  --muted: #7A6E5E;
+  --line: #E5DDD0;
+  --accent: #2E3A6B;
+  --accent-tint: rgba(46,58,107,0.07);
+  --accent-line: rgba(46,58,107,0.28);
+  --wheat: #8E6A1C;
+  --wheat-tint: rgba(176,138,46,0.16);
+  --leaf: #2F6B4F;
+  --leaf-tint: rgba(47,107,79,0.13);
+  --display: 'Cormorant Garamond', Garamond, 'Times New Roman', serif;
+  --body: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --ui: 'Source Sans 3', 'Segoe UI', Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #14161D; --paper: #1B1E28; --ink: #E9E3D6; --muted: #A39A8A; --line: #2D3141;
+    --accent: #AAB7EE; --accent-tint: rgba(170,183,238,0.08); --accent-line: rgba(170,183,238,0.3);
+    --wheat: #D9B562; --wheat-tint: rgba(217,181,98,0.15); --leaf: #80C29C; --leaf-tint: rgba(128,194,156,0.14);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #14161D; --paper: #1B1E28; --ink: #E9E3D6; --muted: #A39A8A; --line: #2D3141;
+  --accent: #AAB7EE; --accent-tint: rgba(170,183,238,0.08); --accent-line: rgba(170,183,238,0.3);
+  --wheat: #D9B562; --wheat-tint: rgba(217,181,98,0.15); --leaf: #80C29C; --leaf-tint: rgba(128,194,156,0.14);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.55; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+.wrap { max-width: 1240px; margin: 0 auto; padding-inline: clamp(16px, 4vw, 48px); padding-block: 0 64px; }
+.topbar { height: 6px; background: var(--accent); }
+
+.eyebrow { font-family: var(--ui); font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 0; }
+.cite, .ref { font-family: var(--ui); font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.ref a, .cite a { text-decoration: none; border-bottom: 1px dotted var(--accent-line); }
+.ref a:hover, .cite a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+h1, h2, h3 { text-wrap: balance; }
+
+/* ------------ header */
+header.mast { padding-block: 40px 28px; display: grid; gap: 14px; }
+.mast-row { display: flex; justify-content: space-between; gap: 8px 24px; flex-wrap: wrap; }
+h1 { font-family: var(--display); font-weight: 500; font-size: clamp(40px, 6.4vw, 76px); line-height: 1.02; letter-spacing: -0.01em; color: var(--accent); margin: 6px 0 0; }
+.dek { font-style: italic; color: var(--muted); font-size: 17px; margin: 0; max-width: 62ch; }
+.epigraph { margin: 10px 0 0; padding: 18px 0 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px 40px; }
+.epigraph p { margin: 0; }
+.epigraph .q { font-family: var(--display); font-size: 22px; line-height: 1.3; font-style: italic; }
+.epigraph .note { font-size: 14px; color: var(--muted); max-width: 60ch; }
+
+section.block { padding-block: 34px; border-top: 1px solid var(--line); }
+.block-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px 20px; flex-wrap: wrap; margin-bottom: 20px; }
+.block-head h2 { font-family: var(--display); font-weight: 600; font-size: 30px; line-height: 1.1; margin: 0; color: var(--ink); }
+
+/* ------------ the heart */
+.pillars { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border: 1px solid var(--line); background: var(--paper); }
+.pillar { padding: 20px 22px; display: grid; gap: 10px; align-content: start; }
+.pillar + .pillar { border-left: 1px solid var(--line); }
+.pillar h3 { font-family: var(--display); font-size: 26px; font-weight: 600; color: var(--accent); margin: 0; line-height: 1.1; }
+.pillar blockquote { margin: 0; font-style: italic; }
+.summaries { margin-top: 18px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px 26px; }
+.summary { display: grid; gap: 6px; align-content: start; }
+.summary h3 { font-family: var(--ui); font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin: 0; }
+.summary blockquote { margin: 0; font-size: 14px; font-style: italic; }
+
+/* ------------ names */
+.names { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px 36px; }
+.name { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-block: 7px; border-bottom: 1px solid var(--line); min-width: 0; }
+.name b { font-family: var(--display); font-size: 21px; font-weight: 600; line-height: 1.15; }
+.name .ref { white-space: normal; text-align: right; }
+.name-note { margin: 14px 0 0; font-size: 13px; color: var(--muted); max-width: 80ch; }
+
+/* ------------ chapter map */
+.map { display: grid; grid-template-columns: repeat(28, minmax(0, 1fr)); gap: 3px; }
+.cell { display: block; height: 34px; border-radius: 2px; font-family: var(--ui); font-size: 11px; font-variant-numeric: tabular-nums; text-decoration: none; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 3px; overflow: hidden; }
+.cell.n { background: var(--line); color: var(--muted); }
+.cell.d { background: var(--accent); color: var(--bg); }
+.cell.x { background: transparent; color: var(--muted); border: 1px solid var(--line); }
+.cell:hover { outline: 2px solid var(--accent-line); }
+.map-labels { display: grid; grid-template-columns: repeat(28, minmax(0, 1fr)); gap: 3px; margin-top: 8px; font-family: var(--ui); font-size: 11.5px; line-height: 1.25; }
+.map-labels span { min-width: 0; overflow-wrap: anywhere; color: var(--muted); padding-top: 4px; border-top: 1px solid var(--line); }
+.map-labels span.d { color: var(--accent); font-weight: 600; border-top-color: var(--accent); }
+.map-labels .short { display: none; }
+.map-key { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px 22px; font-family: var(--ui); font-size: 12.5px; color: var(--muted); }
+.map-key i { display: inline-block; width: 12px; height: 12px; border-radius: 2px; vertical-align: -1px; margin-right: 6px; }
+
+/* ------------ filter */
+.filter { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 10px; margin-top: 22px; font-family: var(--ui); font-size: 13px; color: var(--muted); }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; background: var(--paper); }
+.seg button { font: inherit; font-weight: 600; color: var(--muted); background: transparent; border: 0; padding: 6px 14px; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; }
+.seg button + button { border-left: 1px solid var(--line); }
+.seg button[aria-pressed="true"] { background: var(--accent-tint); color: var(--accent); }
+.seg .n { font-weight: 400; font-variant-numeric: tabular-nums; }
+
+.dot { width: 8px; height: 8px; border-radius: 50%; flex: none; display: inline-block; }
+.dot.p { background: var(--wheat); }
+.dot.m { border: 1.5px solid var(--leaf); }
+
+/* ------------ books */
+.book { padding-block: 36px 8px; border-top: 1px solid var(--line); scroll-margin-top: 12px; }
+.book-label { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 18px; }
+.book-label .eyebrow { color: var(--accent); }
+.book-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.15fr); gap: 28px; align-items: start; }
+
+.narr h3 { font-family: var(--display); font-size: 22px; font-weight: 600; margin: 2px 0 2px; line-height: 1.15; }
+.narr .span { margin: 0 0 12px; }
+.narr blockquote { margin: 14px 0 0; padding-left: 12px; border-left: 2px solid var(--line); font-style: italic; font-size: 14px; }
+.narr blockquote .cite { display: block; font-style: normal; margin-top: 4px; }
+
+.list { list-style: none; margin: 0; padding: 0; }
+.row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 4px 6px; margin-inline: -6px; border-radius: 3px; break-inside: avoid; transition: opacity .15s, background-color .15s; }
+.row .t { display: flex; align-items: baseline; gap: 8px; min-width: 0; }
+.row .t .dot { position: relative; top: -1px; }
+.row .t .nodot { width: 8px; flex: none; }
+.row .ref { flex: none; }
+.row .num { font-family: var(--ui); font-size: 11px; color: var(--accent); font-weight: 700; width: 12px; flex: none; }
+.narr .row { font-size: 14px; }
+
+.disc { background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--accent); padding: 22px 24px 20px; min-width: 0; }
+.disc-head { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 18px; align-items: start; }
+.numeral { font-family: var(--display); font-size: 64px; line-height: 0.8; color: var(--accent); font-weight: 500; grid-row: span 3; padding-top: 4px; }
+.disc h3 { font-family: var(--display); font-size: 31px; font-weight: 600; margin: 0; line-height: 1.05; color: var(--ink); }
+.meta { display: flex; flex-wrap: wrap; gap: 4px 18px; font-family: var(--ui); font-size: 12.5px; color: var(--muted); }
+.meta b { color: var(--ink); font-weight: 600; }
+.key { margin: 18px 0 16px; padding: 12px 16px; background: var(--accent-tint); font-style: italic; font-size: 15.5px; }
+.key .cite { font-style: normal; margin-left: 6px; }
+.disc .list { columns: 2; column-gap: 34px; }
+.sub-head { font-family: var(--ui); font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); padding: 8px 0 2px; break-after: avoid; list-style: none; }
+.companions { margin-top: 16px; padding-top: 12px; border-top: 1px dashed var(--line); }
+.companions .sub-head { padding-top: 0; }
+.companions .list { columns: 2; column-gap: 34px; }
+.aside-q { margin: 14px 0 0; font-size: 14px; font-style: italic; }
+.aside-q .cite { font-style: normal; margin-left: 6px; }
+.disc-note { margin: 12px 0 0; font-size: 13px; color: var(--muted); }
+
+.refrain { margin-top: 26px; padding-block: 18px 6px; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 6px 18px; align-items: baseline; border-top: 1px solid var(--accent-line); }
+.refrain .eyebrow { color: var(--accent); }
+.refrain blockquote { margin: 0; font-family: var(--display); font-style: italic; font-size: clamp(21px, 2.4vw, 27px); line-height: 1.25; }
+.refrain blockquote b { font-weight: 600; color: var(--accent); }
+
+body[data-hl="p"] .row:not(.p), body[data-hl="m"] .row:not(.m) { opacity: 0.32; }
+body[data-hl="p"] .row.p { background: var(--wheat-tint); }
+body[data-hl="m"] .row.m { background: var(--leaf-tint); }
+
+/* ------------ epilogue */
+.commission { margin-top: 18px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.15fr); gap: 28px; align-items: start; }
+.commission blockquote { margin: 0; font-family: var(--display); font-size: clamp(22px, 2.6vw, 29px); line-height: 1.3; font-style: italic; }
+.commission blockquote b { color: var(--accent); font-weight: 600; }
+.commission .cite { display: block; margin-top: 10px; }
+
+/* ------------ people & commands */
+.people { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 26px; }
+.people > div { min-width: 0; display: grid; gap: 8px; align-content: start; }
+.people h3, .cmd h3 { font-family: var(--display); font-size: 23px; font-weight: 600; margin: 0; color: var(--accent); line-height: 1.1; }
+.people p { margin: 0; font-size: 14px; }
+.pairs { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 0; }
+.pairs li { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding-block: 5px; border-bottom: 1px solid var(--line); font-size: 14.5px; }
+.pairs li span:last-child { min-width: 0; }
+.small { font-size: 12.5px; color: var(--muted); }
+
+.cmds { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 26px; }
+.cmd { min-width: 0; }
+.cmd ul { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 7px; }
+.cmd li { font-size: 14px; line-height: 1.4; }
+.cmd li .ref { display: block; white-space: normal; margin-top: 1px; }
+
+/* ------------ footer */
+footer { border-top: 1px solid var(--line); padding-block: 26px 0; display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 20px 40px; }
+footer h3 { font-family: var(--ui); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 0 0 6px; }
+footer p { margin: 0 0 8px; font-size: 13.5px; color: var(--muted); max-width: 72ch; }
+.legal { grid-column: 1 / -1; font-family: var(--ui); font-size: 11px; color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px 20px; padding-top: 12px; border-top: 1px solid var(--line); }
+
+/* ------------ responsive */
+@media (max-width: 1020px) {
+  .summaries { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .names { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .people { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cmds { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .map-labels .long { display: none; }
+  .map-labels .short { display: inline; }
+}
+@media (max-width: 860px) {
+  .book-grid, .commission { grid-template-columns: minmax(0, 1fr); }
+  .pillars { grid-template-columns: minmax(0, 1fr); }
+  .pillar + .pillar { border-left: 0; border-top: 1px solid var(--line); }
+  .epigraph, footer { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 640px) {
+  .disc .list, .companions .list { columns: 1; }
+  .names, .summaries, .people, .cmds { grid-template-columns: minmax(0, 1fr); }
+  .disc { padding: 18px 16px; }
+  .numeral { font-size: 48px; }
+  .disc h3 { font-size: 26px; }
+  .refrain { grid-template-columns: minmax(0, 1fr); }
+  .cell { font-size: 0; height: 26px; }
+  .map { gap: 2px; }
+  .map-labels { font-size: 10.5px; gap: 2px; }
+}
+@media (prefers-reduced-motion: reduce) { .row { transition: none; } }
+</style>
+</head>
+<body>
+<div class="topbar"></div>
+<nav class="site-back" aria-label="Site"><a href="./">&larr; All reference sheets</a></nav>
+<div class="wrap">
+
+<header class="mast">
+  <div class="mast-row">
+    <p class="eyebrow">Reference Series &middot; On Jesus</p>
+    <p class="eyebrow">The Kingdom of Heaven &middot; Sheet 3 &middot; The Five Discourses</p>
+  </div>
+  <h1>The Gospel of the Kingdom of Heaven</h1>
+  <p class="dek">Matthew&rsquo;s five great discourses, the life told between them, and the people and commands around them</p>
+  <div class="epigraph">
+    <p><span class="q">&ldquo;And he went throughout all Galilee, teaching in their synagogues and proclaiming the gospel of the kingdom and healing every disease and every affliction among the people.&rdquo;</span> <span class="cite" data-refs="Matt 4:23">Matt 4:23</span></p>
+    <p class="note">Matthew names the message three times: &ldquo;the gospel of the kingdom&rdquo; (4:23; 9:35; 24:14). The first two, nearly word for word alike, frame chapters 5 to 9: teaching and preaching in the Sermon on the Mount, healing in the mighty works that follow. Every passage on this sheet links to its ESV text.</p>
+  </div>
+</header>
+
+<section class="block" id="heart">
+  <div class="block-head">
+    <h2>The heart of the gospel</h2>
+    <p class="eyebrow">What the kingdom rests on</p>
+  </div>
+  <div class="pillars">
+    <div class="pillar">
+      <p class="eyebrow">God is our Father</p>
+      <h3>The fatherhood of God</h3>
+      <blockquote>&ldquo;If you then, who are evil, know how to give good gifts to your children, how much more will your Father who is in heaven give good things to those who ask him!&rdquo;</blockquote>
+      <span class="cite" data-refs="Matt 7:11; 6:9">Matt 7:11; 6:9</span>
+    </div>
+    <div class="pillar">
+      <p class="eyebrow">We are his children</p>
+      <h3>Our sonship with him</h3>
+      <blockquote>&ldquo;Love your enemies and pray for those who persecute you, so that you may be sons of your Father who is in heaven.&rdquo;</blockquote>
+      <span class="cite" data-refs="Matt 5:44–45; 5:9">Matt 5:44&ndash;45; 5:9</span>
+    </div>
+    <div class="pillar">
+      <p class="eyebrow">So we are family</p>
+      <h3>The brotherhood of mankind</h3>
+      <blockquote>&ldquo;But you are not to be called rabbi, for you have one teacher, and you are all brothers.&rdquo;</blockquote>
+      <span class="cite" data-refs="Matt 23:8; 12:50">Matt 23:8; 12:50</span>
+    </div>
+  </div>
+  <div class="summaries">
+    <div class="summary">
+      <h3>The Great Commandment</h3>
+      <blockquote>&ldquo;You shall love the Lord your God with all your heart and with all your soul and with all your mind. This is the great and first commandment. And a second is like it: You shall love your neighbor as yourself.&rdquo;</blockquote>
+      <span class="cite" data-refs="Matt 22:34–40">Matt 22:34&ndash;40</span>
+    </div>
+    <div class="summary">
+      <h3>The Golden Rule</h3>
+      <blockquote>&ldquo;So whatever you wish that others would do to you, do also to them, for this is the Law and the Prophets.&rdquo;</blockquote>
+      <span class="cite" data-refs="Matt 7:12">Matt 7:12</span>
+    </div>
+    <div class="summary">
+      <h3>The Lord&rsquo;s Prayer</h3>
+      <blockquote>&ldquo;Our Father in heaven, hallowed be your name. Your kingdom come, your will be done, on earth as it is in heaven.&rdquo;</blockquote>
+      <span class="cite" data-refs="Matt 6:9–13">Matt 6:9&ndash;13</span>
+    </div>
+    <div class="summary">
+      <h3>The Great Commission</h3>
+      <blockquote>&ldquo;Go therefore and make disciples of all nations&hellip; teaching them to observe all that I have commanded you.&rdquo;</blockquote>
+      <span class="cite" data-refs="Matt 28:18–20">Matt 28:18&ndash;20</span>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="names">
+  <div class="block-head">
+    <h2>Who proclaims it</h2>
+    <p class="eyebrow">Names and titles of Jesus</p>
+  </div>
+  <div class="names">
+    <div class="name"><b>Jesus of Nazareth</b><span class="ref" data-refs="Matt 2:23; 21:11; John 1:45">Matt 2:23; 21:11; John 1:45</span></div>
+    <div class="name"><b>The Christ, the Messiah</b><span class="ref" data-refs="Matt 16:16; John 4:25–26">Matt 16:16; John 4:25&ndash;26</span></div>
+    <div class="name"><b>Savior</b><span class="ref" data-refs="Luke 2:11; John 4:42">Luke 2:11; John 4:42</span></div>
+    <div class="name"><b>Son of Man</b><span class="ref" data-refs="Matt 8:20; 16:13; 24:30; 26:64">Matt 8:20; 16:13; 24:30; 26:64</span></div>
+    <div class="name"><b>Son of God</b><span class="ref" data-refs="Matt 14:33; 16:16; 27:54">Matt 14:33; 16:16; 27:54</span></div>
+    <div class="name"><b>The Lamb of God</b><span class="ref" data-refs="John 1:29">John 1:29</span></div>
+    <div class="name"><b>The Way, the Truth, and the Life</b><span class="ref" data-refs="John 14:6">John 14:6</span></div>
+    <div class="name"><b>The Light of the World</b><span class="ref" data-refs="John 8:12; 1:9">John 8:12; 1:9</span></div>
+    <div class="name"><b>Prince of Peace</b><span class="ref" data-refs="Isa 9:6">Isa 9:6</span></div>
+    <div class="name"><b>Bringer of Good News</b><span class="ref" data-refs="Luke 4:16–21; Isa 61:1">Luke 4:16&ndash;21; Isa 61:1</span></div>
+    <div class="name"><b>Our Brother</b><span class="ref" data-refs="Matt 12:50; 28:10; Heb 2:11">Matt 12:50; 28:10; Heb 2:11</span></div>
+    <div class="name"><b>Teacher and Lord, the Master</b><span class="ref" data-refs="Matt 23:8–10; John 13:13">Matt 23:8&ndash;10; John 13:13</span></div>
+  </div>
+  <p class="name-note">&ldquo;Our Brother&rdquo; is a description, not a title the Gospels use. The idea is theirs: he calls those who do the Father&rsquo;s will his brothers (Matt 12:50), and after the resurrection sends word to &ldquo;my brothers&rdquo; (Matt 28:10).</p>
+</section>
+
+<section class="block" id="structure">
+  <div class="block-head">
+    <h2>Five books, five discourses</h2>
+    <p class="eyebrow">Matthew 1 to 28, by chapter</p>
+  </div>
+  <div class="map" id="map" aria-label="Chapters of Matthew, discourse chapters filled"></div>
+  <div class="map-labels" id="map-labels"></div>
+  <div class="map-key">
+    <span><i style="background:var(--accent)"></i>Discourse: a long block of Jesus&rsquo; teaching</span>
+    <span><i style="background:var(--line)"></i>Narrative: what he did, where he went, who opposed him</span>
+    <span><i style="border:1px solid var(--line)"></i>Birth and passion, framing the five books</span>
+  </div>
+  <div class="filter">
+    <span>Mark on every list:</span>
+    <div class="seg" role="group" aria-label="Highlight passages">
+      <button type="button" id="hl-all" data-hl="" aria-pressed="true">All passages</button>
+      <button type="button" id="hl-p" data-hl="p" aria-pressed="false"><span class="dot p"></span>Parables <span class="n" id="count-p"></span></button>
+      <button type="button" id="hl-m" data-hl="m" aria-pressed="false"><span class="dot m"></span>Mighty works <span class="n" id="count-m"></span></button>
+    </div>
+  </div>
+</section>
+
+<div id="books"></div>
+
+<section class="book" id="epilogue">
+  <div class="book-label">
+    <p class="eyebrow">Epilogue &middot; Matthew 26 to 28</p>
+  </div>
+  <div class="commission">
+    <div class="narr">
+      <h3>The passion and the commission</h3>
+      <p class="span cite">Matthew 26:2 to 28:20</p>
+      <ul class="list" id="epilogue-list"></ul>
+    </div>
+    <div>
+      <blockquote>&ldquo;All authority in heaven and on earth has been given to me. Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, <b>teaching them to observe all that I have commanded you.</b> And behold, I am with you always, to the end of the age.&rdquo;
+        <span class="cite" data-refs="Matt 28:18–20">Matt 28:18&ndash;20</span></blockquote>
+      <p class="disc-note">The last words of the Gospel send the disciples back to the five discourses: &ldquo;all that I have commanded you&rdquo; is what the book has just recorded.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="people">
+  <div class="block-head">
+    <h2>Those who carried it</h2>
+    <p class="eyebrow">Disciples of Jesus</p>
+  </div>
+  <div class="people">
+    <div>
+      <h3>The Twelve</h3>
+      <p class="small">Matthew names them in pairs, the way they were sent out (Mark 6:7). <span class="cite" data-refs="Matt 10:2–4; Mark 3:16–19; Luke 6:14–16">Matt 10:2&ndash;4; Mark 3:16&ndash;19; Luke 6:14&ndash;16</span></p>
+      <ul class="pairs">
+        <li><span>Simon Peter</span><span>Andrew, his brother</span></li>
+        <li><span>James, son of Zebedee</span><span>John, his brother</span></li>
+        <li><span>Philip</span><span>Bartholomew</span></li>
+        <li><span>Thomas</span><span>Matthew, the tax collector</span></li>
+        <li><span>James, son of Alphaeus</span><span>Thaddaeus</span></li>
+        <li><span>Simon the Zealot</span><span>Judas Iscariot</span></li>
+      </ul>
+      <p class="small">Andrew, Peter, Philip, and Nathanael are first called in John 1:35&ndash;51. Tradition identifies Nathanael with Bartholomew. Luke calls Thaddaeus &ldquo;Judas the son of James&rdquo; (Luke 6:16).</p>
+    </div>
+    <div>
+      <h3>The women who followed</h3>
+      <p>Mary called Magdalene, Joanna the wife of Chuza, Susanna, &ldquo;and many others, who provided for them out of their means.&rdquo; <span class="cite" data-refs="Luke 8:1–3">Luke 8:1&ndash;3</span></p>
+      <p>They followed him from Galilee to the cross, and were first at the empty tomb. <span class="cite" data-refs="Matt 27:55–56; 28:1–10">Matt 27:55&ndash;56; 28:1&ndash;10</span></p>
+    </div>
+    <div>
+      <h3>The seventy-two</h3>
+      <p>Sent ahead of him two by two into every town and place he was about to visit, with instructions much like the Twelve&rsquo;s. <span class="cite" data-refs="Luke 10:1–20">Luke 10:1&ndash;20</span></p>
+      <p>John the Baptist&rsquo;s own messengers carried questions to Jesus and his answer back. <span class="cite" data-refs="Matt 11:2–6; Luke 7:18–23">Matt 11:2&ndash;6; Luke 7:18&ndash;23</span></p>
+    </div>
+    <div>
+      <h3>The mixed multitude</h3>
+      <p>&ldquo;And great crowds followed him from Galilee and the Decapolis, and from Jerusalem and Judea, and from beyond the Jordan.&rdquo; <span class="cite" data-refs="Matt 4:25">Matt 4:25</span></p>
+      <p>The sower&rsquo;s seed falls on all of them; the soil decides the harvest. <span class="cite" data-refs="Matt 13:3–9">Matt 13:3&ndash;9</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="commands">
+  <div class="block-head">
+    <h2>Commands of Jesus</h2>
+    <p class="eyebrow">&ldquo;All that I have commanded you&rdquo;</p>
+  </div>
+  <div class="cmds">
+    <div class="cmd">
+      <h3>Repentance and faith</h3>
+      <ul>
+        <li>Repent, for the kingdom of heaven is at hand <span class="ref" data-refs="Matt 4:17; Mark 1:15">Matt 4:17; Mark 1:15</span></li>
+        <li>Believe in the gospel <span class="ref" data-refs="Mark 1:15">Mark 1:15</span></li>
+        <li>You must be born again <span class="ref" data-refs="John 3:7">John 3:7</span></li>
+        <li>Believe in him whom God has sent <span class="ref" data-refs="John 6:29; 8:24; 14:1">John 6:29; 8:24; 14:1</span></li>
+        <li>Abide in my word <span class="ref" data-refs="John 8:31">John 8:31</span></li>
+        <li>Believe in the light <span class="ref" data-refs="John 12:36">John 12:36</span></li>
+      </ul>
+    </div>
+    <div class="cmd">
+      <h3>Love and forgiveness</h3>
+      <ul>
+        <li>Love your enemies <span class="ref" data-refs="Matt 5:44; Luke 6:27">Matt 5:44; Luke 6:27</span></li>
+        <li>Love your neighbor as yourself <span class="ref" data-refs="Matt 22:39; Mark 12:31; Luke 10:27">Matt 22:39; Mark 12:31; Luke 10:27</span></li>
+        <li>Love one another as I have loved you <span class="ref" data-refs="John 13:34; 15:12">John 13:34; 15:12</span></li>
+        <li>Forgive others <span class="ref" data-refs="Matt 6:14–15; Mark 11:25; Luke 6:37">Matt 6:14&ndash;15; Mark 11:25; Luke 6:37</span></li>
+        <li>Be merciful, as your Father is merciful <span class="ref" data-refs="Luke 6:36">Luke 6:36</span></li>
+      </ul>
+    </div>
+    <div class="cmd">
+      <h3>Prayer and trust</h3>
+      <ul>
+        <li>Pray for those who persecute you <span class="ref" data-refs="Matt 5:44">Matt 5:44</span></li>
+        <li>Pray to your Father in secret <span class="ref" data-refs="Matt 6:6">Matt 6:6</span></li>
+        <li>Pray then like this <span class="ref" data-refs="Matt 6:9–13; Luke 11:2–4">Matt 6:9&ndash;13; Luke 11:2&ndash;4</span></li>
+        <li>Ask, seek, knock <span class="ref" data-refs="Matt 7:7–8; Luke 11:9–10">Matt 7:7&ndash;8; Luke 11:9&ndash;10</span></li>
+        <li>Have faith in God <span class="ref" data-refs="Mark 11:22">Mark 11:22</span></li>
+        <li>Pray always and do not lose heart <span class="ref" data-refs="Luke 18:1">Luke 18:1</span></li>
+        <li>Watch and pray <span class="ref" data-refs="Matt 26:41; Mark 14:38; Luke 22:40">Matt 26:41; Mark 14:38; Luke 22:40</span></li>
+      </ul>
+    </div>
+    <div class="cmd">
+      <h3>Discipleship and service</h3>
+      <ul>
+        <li>Follow me <span class="ref" data-refs="Matt 4:19; 9:9; 16:24; Mark 2:14; Luke 9:23; John 1:43; 12:26">Matt 4:19; 9:9; 16:24; Mark 2:14; Luke 9:23; John 1:43; 12:26</span></li>
+        <li>Be fishers of men <span class="ref" data-refs="Matt 4:19; Mark 1:17">Matt 4:19; Mark 1:17</span></li>
+        <li>Let your light shine before others <span class="ref" data-refs="Matt 5:16">Matt 5:16</span></li>
+        <li>Be perfect, as your heavenly Father is perfect <span class="ref" data-refs="Matt 5:48">Matt 5:48</span></li>
+        <li>Seek first the kingdom of God <span class="ref" data-refs="Matt 6:33">Matt 6:33</span></li>
+        <li>Do not throw your pearls before pigs <span class="ref" data-refs="Matt 7:6">Matt 7:6</span></li>
+        <li>Beware of false prophets <span class="ref" data-refs="Matt 7:15">Matt 7:15</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <h3>About the five books</h3>
+    <p>Matthew ends five long blocks of teaching with nearly the same sentence (7:28; 11:1; 13:53; 19:1; 26:1), and each block follows a stretch of narrative. Read that way, the Gospel falls into five books, framed by the birth stories at the start and the passion at the end. The five discourses are widely recognized. B. W. Bacon&rsquo;s further proposal, that they deliberately mirror the five books of Moses, is still debated.</p>
+    <p>Chapter 23 is spoken to the crowds in the temple and chapters 24 and 25 to the disciples on the Mount of Olives, so some readers count only 24 and 25 as the fifth discourse. This sheet follows the wider reading.</p>
+  </div>
+  <div>
+    <h3>How to read the lists</h3>
+    <p>Passage titles follow the sheet&rsquo;s own outline; references follow ESV paragraphing. Lines marked &ldquo;from Luke&rdquo; or &ldquo;from Mark&rdquo; are companion passages on the same theme that Matthew does not include. A filled dot marks a parable; a ring marks a mighty work.</p>
+  </div>
+  <div class="legal">
+    <span>Scripture quotations are from the ESV&reg; Bible (The Holy Bible, English Standard Version&reg;), &copy; 2001 by Crossway, a publishing ministry of Good News Publishers. ESV Text Edition: 2025. The ESV text may not be quoted in any publication made available to the public by a Creative Commons license. The ESV may not be translated in whole or in part into any other language. Used by permission. All rights reserved.</span>
+    <span>On Jesus &middot; hansorun.substack.com &middot; Companion to Sheet 1, The Gospel of the Kingdom</span>
+  </div>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  // Kinds: p = parable, m = mighty work. Rows with b set come from another Gospel.
+  var BOOKS = [
+    {
+      id: 'book-1', label: 'Book One', span: 'Matthew 1 to 7',
+      narr: { title: 'The King and his kingdom announced', refs: 'Matthew 1:1 to 4:25', rows: [
+        ['The genealogy of Jesus Christ', '1:1–17'],
+        ['The birth of Jesus', '1:18–25'],
+        ['The wise men from the east', '2:1–12'],
+        ['Flight to Egypt; home to Nazareth', '2:13–23'],
+        ['John the Baptist prepares the way', '3:1–12'],
+        ['The baptism of Jesus', '3:13–17'],
+        ['The temptation in the wilderness', '4:1–11'],
+        ['He begins to preach in Galilee', '4:12–17'],
+        ['Calling the first disciples', '4:18–22'],
+        ['Teaching, preaching, healing', '4:23–25']
+      ], quote: ['From that time Jesus began to preach, saying, “Repent, for the kingdom of heaven is at hand.”', 'Matt 4:17'] },
+      disc: { num: 'I', title: 'The Sermon on the Mount', refs: 'Matthew 5:1 to 7:29', to: 'His disciples, with the crowds listening', where: 'On the mountain', whereRef: 'Matt 5:1',
+        key: ['But seek first the kingdom of God and his righteousness, and all these things will be added to you.', 'Matt 6:33'],
+        rows: [
+          ['The Beatitudes', '5:3–12'],
+          ['Salt of the earth', '5:13'],
+          ['Light of the world', '5:14–16'],
+          ['The Law and the Prophets fulfilled', '5:17–20'],
+          ['#You have heard… but I say to you'],
+          ['1On murder and anger', '5:21–26'],
+          ['2On adultery', '5:27–30'],
+          ['3On divorce', '5:31–32; 19:9'],
+          ['4On oaths', '5:33–37'],
+          ['5On retaliation', '5:38–42'],
+          ['6On loving your enemies', '5:43–48'],
+          ['#Piety in secret'],
+          ['On giving to the needy', '6:1–4'],
+          ['On prayer', '6:5–6'],
+          ['The Lord’s Prayer', '6:7–15'],
+          ['On forgiving others', '6:14–15'],
+          ['On fasting', '6:16–18'],
+          ['#Treasure and trust'],
+          ['Treasures on earth and in heaven', '6:19–21'],
+          ['The eye is the lamp of the body', '6:22–23'],
+          ['No one can serve two masters', '6:24'],
+          ['Do not be anxious: birds and lilies', '6:25–34'],
+          ['#Judging, asking, choosing'],
+          ['Judge not', '7:1–2'],
+          ['The speck and the log', '7:3–5'],
+          ['Do not profane what is holy', '7:6'],
+          ['Ask, seek, knock: God answers', '7:7–11'],
+          ['The Golden Rule', '7:12'],
+          ['Two roads, two gates', '7:13–14'],
+          ['A tree known by its fruit', '7:15–20'],
+          ['Not everyone who says “Lord, Lord”', '7:21–23'],
+          ['The two houses', '7:24–27', 'p']
+        ],
+        companions: [['The Sermon on the Plain', '6:20–49', '', 'Luke']]
+      },
+      refrain: ['And <b>when Jesus finished these sayings</b>, the crowds were astonished at his teaching, for he was teaching them as one who had authority, and not as their scribes.', 'Matt 7:28–29']
+    },
+    {
+      id: 'book-2', label: 'Book Two', span: 'Matthew 8 to 10',
+      narr: { title: 'Ten mighty works, and the cost of following', refs: 'Matthew 8:1 to 10:4', rows: [
+        ['A leper cleansed', '8:1–4', 'm'],
+        ['The centurion’s servant', '8:5–13', 'm'],
+        ['Peter’s mother-in-law; many healed', '8:14–17', 'm'],
+        ['The cost of following Jesus', '8:18–22'],
+        ['He calms the storm', '8:23–27', 'm'],
+        ['Two men with demons', '8:28–34', 'm'],
+        ['A paralytic forgiven and healed', '9:1–8', 'm'],
+        ['The call of Matthew', '9:9–13'],
+        ['New wine, old wineskins', '9:14–17'],
+        ['A girl restored, a woman healed', '9:18–26', 'm'],
+        ['Two blind men', '9:27–31', 'm'],
+        ['A mute man speaks', '9:32–34', 'm'],
+        ['The harvest is plentiful', '9:35–38'],
+        ['The Twelve named', '10:1–4']
+      ] },
+      disc: { num: 'II', title: 'Missionary Instructions', refs: 'Matthew 10:5 to 11:1', to: 'The Twelve, as he sends them out', where: 'Galilee', whereRef: 'Matt 10:5',
+        key: ['And proclaim as you go, saying, ‘The kingdom of heaven is at hand.’ Heal the sick, raise the dead, cleanse lepers, cast out demons. You received without paying; give without pay.', 'Matt 10:7–8'],
+        rows: [
+          ['The mission of the Twelve', '10:5–15'],
+          ['Persecutions of the disciples', '10:16–25'],
+          ['Have no fear', '10:26–33'],
+          ['Division within households', '10:34–36'],
+          ['The cost of discipleship', '10:37–39'],
+          ['Rewards for hospitality', '10:40–42'],
+          ['Conclusion of the discourse', '11:1']
+        ],
+        companions: [['The seventy-two sent out', '10:1–20', '', 'Luke']]
+      },
+      refrain: ['<b>When Jesus had finished</b> instructing his twelve disciples, he went on from there to teach and preach in their cities.', 'Matt 11:1']
+    },
+    {
+      id: 'book-3', label: 'Book Three', span: 'Matthew 11 to 13',
+      narr: { title: 'Rest for the weary, rising opposition', refs: 'Matthew 11:2 to 12:50', rows: [
+        ['John the Baptist’s question', '11:2–19'],
+        ['Woe to unrepentant cities', '11:20–24'],
+        ['Come to me, and I will give you rest', '11:25–30'],
+        ['Jesus is lord of the Sabbath', '12:1–8'],
+        ['A withered hand restored', '12:9–14', 'm'],
+        ['God’s chosen servant', '12:15–21'],
+        ['Blasphemy against the Holy Spirit', '12:22–32'],
+        ['A tree is known by its fruit', '12:33–37'],
+        ['The sign of Jonah', '12:38–42'],
+        ['The return of an unclean spirit', '12:43–45'],
+        ['Jesus’ mother and brothers', '12:46–50']
+      ], quote: ['Come to me, all who labor and are heavy laden, and I will give you rest. Take my yoke upon you, and learn from me, for I am gentle and lowly in heart, and you will find rest for your souls. For my yoke is easy, and my burden is light.', 'Matt 11:28–30'] },
+      disc: { num: 'III', title: 'Parables of the Kingdom', refs: 'Matthew 13:1 to 13:53', to: 'The crowds on the shore, then the disciples in the house', where: 'From a boat beside the sea', whereRef: 'Matt 13:1–2; 13:36',
+        key: ['The kingdom of heaven is like treasure hidden in a field, which a man found and covered up. Then in his joy he goes and sells all that he has and buys that field.', 'Matt 13:44'],
+        rows: [
+          ['The sower', '13:1–9', 'p'],
+          ['The purpose of the parables', '13:10–17'],
+          ['The sower explained', '13:18–23'],
+          ['The weeds among the wheat', '13:24–30', 'p'],
+          ['The mustard seed', '13:31–32', 'p'],
+          ['The leaven', '13:33', 'p'],
+          ['Prophecy fulfilled in parables', '13:34–35'],
+          ['The weeds explained', '13:36–43'],
+          ['The hidden treasure', '13:44', 'p'],
+          ['The pearl of great value', '13:45–46', 'p'],
+          ['The net', '13:47–50', 'p'],
+          ['Treasures new and old', '13:51–52', 'p']
+        ],
+        companions: [['The seed growing by itself', '4:26–29', 'p', 'Mark']]
+      },
+      refrain: ['And <b>when Jesus had finished these parables</b>, he went away from there,', 'Matt 13:53']
+    },
+    {
+      id: 'book-4', label: 'Book Four', span: 'Matthew 13 to 18',
+      narr: { title: 'Bread, water, and who he is', refs: 'Matthew 13:54 to 17:27', rows: [
+        ['Rejected at Nazareth', '13:54–58'],
+        ['John the Baptist beheaded', '14:1–12'],
+        ['Feeding the five thousand', '14:13–21', 'm'],
+        ['Walking on the water', '14:22–33', 'm'],
+        ['The sick healed in Gennesaret', '14:34–36', 'm'],
+        ['What defiles a person', '15:1–20'],
+        ['The faith of a Canaanite woman', '15:21–28', 'm'],
+        ['Jesus heals many', '15:29–31', 'm'],
+        ['Feeding the four thousand', '15:32–39', 'm'],
+        ['The demand for a sign', '16:1–4'],
+        ['The leaven of the Pharisees and Sadducees', '16:5–12'],
+        ['Peter confesses the Christ', '16:13–20'],
+        ['He foretells his death and resurrection', '16:21–23'],
+        ['Take up your cross', '16:24–28'],
+        ['The transfiguration', '17:1–13'],
+        ['A boy with a demon healed', '17:14–20', 'm'],
+        ['His death foretold a second time', '17:22–23'],
+        ['The temple tax', '17:24–27', 'm']
+      ], quote: ['You are the Christ, the Son of the living God.', 'Matt 16:16'] },
+      disc: { num: 'IV', title: 'Community Instructions', refs: 'Matthew 18:1 to 19:1', to: 'The disciples', where: 'Capernaum', whereRef: 'Matt 17:24–25',
+        key: ['Truly, I say to you, unless you turn and become like children, you will never enter the kingdom of heaven. Whoever humbles himself like this child is the greatest in the kingdom of heaven.', 'Matt 18:3–4'],
+        rows: [
+          ['Who is the greatest?', '18:1–5'],
+          ['Warnings against causing others to sin', '18:6–9'],
+          ['The lost sheep', '18:10–14', 'p'],
+          ['Reproving a brother who sins', '18:15–17'],
+          ['Binding and loosing', '18:18'],
+          ['Where two or three are gathered', '18:19–20'],
+          ['How often to forgive', '18:21–22'],
+          ['The unforgiving servant', '18:23–35', 'p']
+        ],
+        companions: [
+          ['The lost coin', '15:8–10', 'p', 'Luke'],
+          ['The prodigal son', '15:11–32', 'p', 'Luke'],
+          ['The good Samaritan', '10:25–37', 'p', 'Luke'],
+          ['The dishonest manager', '16:1–13', 'p', 'Luke'],
+          ['The persistent widow', '18:1–8', 'p', 'Luke']
+        ],
+        aside: ['By this all people will know that you are my disciples, if you have love for one another.', 'John 13:35']
+      },
+      refrain: ['Now <b>when Jesus had finished these sayings</b>, he went away from Galilee and entered the region of Judea beyond the Jordan.', 'Matt 19:1']
+    },
+    {
+      id: 'book-5', label: 'Book Five', span: 'Matthew 19 to 25',
+      narr: { title: 'To Jerusalem: the unworthy inheritors', refs: 'Matthew 19:2 to 22:46', rows: [
+        ['Teaching about divorce', '19:3–12'],
+        ['Let the little children come to me', '19:13–15'],
+        ['The rich young man', '19:16–30'],
+        ['The laborers in the vineyard', '20:1–16', 'p'],
+        ['His death foretold a third time', '20:17–19'],
+        ['Not to be served but to serve', '20:20–28'],
+        ['Two blind men at Jericho', '20:29–34', 'm'],
+        ['The triumphal entry', '21:1–11'],
+        ['He cleanses the temple', '21:12–17'],
+        ['The fig tree withers', '21:18–22', 'm'],
+        ['His authority challenged', '21:23–27'],
+        ['The two sons', '21:28–32', 'p'],
+        ['The tenants (the absent landowner)', '21:33–46', 'p'],
+        ['The wedding feast', '22:1–14', 'p'],
+        ['Paying taxes to Caesar', '22:15–22'],
+        ['Sadducees ask about the resurrection', '22:23–33'],
+        ['The great commandment', '22:34–40'],
+        ['Whose son is the Christ?', '22:41–46'],
+        ['The barren fig tree', '13:6–9', 'p', 'Luke'],
+        ['The great banquet', '14:15–24', 'p', 'Luke'],
+        ['The Pharisee and the tax collector', '18:9–14', 'p', 'Luke']
+      ], quote: ['Therefore I tell you, the kingdom of God will be taken away from you and given to a people producing its fruits.', 'Matt 21:43'] },
+      disc: { num: 'V', title: 'Woes and the End of the Age', refs: 'Matthew 23:1 to 26:1', to: 'Crowds and disciples in the temple, then the disciples privately', where: 'The temple; the Mount of Olives', whereRef: 'Matt 23:1; 24:3',
+        key: ['And the King will answer them, ‘Truly, I say to you, as you did it to one of the least of these my brothers, you did it to me.’', 'Matt 25:40'],
+        rows: [
+          ['#In the temple'],
+          ['Woes to the scribes and Pharisees', '23:1–36'],
+          ['Lament over Jerusalem', '23:37–39'],
+          ['#On the Mount of Olives'],
+          ['The destruction of the temple foretold', '24:1–2'],
+          ['Signs before the end', '24:3–8'],
+          ['Persecutions foretold', '24:9–14'],
+          ['The desolating sacrilege', '24:15–22'],
+          ['False christs and false prophets', '24:23–28'],
+          ['The coming of the Son of Man', '24:29–31'],
+          ['The lesson of the fig tree', '24:32–35', 'p'],
+          ['No one knows the day or hour', '24:36–44'],
+          ['The faithful and the wicked servant', '24:45–51', 'p'],
+          ['The ten virgins', '25:1–13', 'p'],
+          ['The talents', '25:14–30', 'p'],
+          ['The final judgment: sheep and goats', '25:31–46', 'p']
+        ],
+        companions: [['The rich man and Lazarus', '16:19–31', 'p', 'Luke']],
+        aside: ['And this gospel of the kingdom will be proclaimed throughout the whole world as a testimony to all nations, and then the end will come.', 'Matt 24:14']
+      },
+      refrain: ['<b>When Jesus had finished all these sayings</b>, he said to his disciples,', 'Matt 26:1']
+    }
+  ];
+
+  var EPILOGUE = [
+    ['The plot; the anointing at Bethany', '26:2–13'],
+    ['Judas agrees to betray him', '26:14–16'],
+    ['The Last Supper', '26:17–30'],
+    ['Gethsemane', '26:36–46'],
+    ['Betrayal and arrest', '26:47–56'],
+    ['Before Caiaphas; Peter’s denial', '26:57–75'],
+    ['Before Pilate', '27:1–26'],
+    ['The crucifixion and death', '27:27–56'],
+    ['The burial', '27:57–66'],
+    ['The resurrection', '28:1–10', 'm'],
+    ['The Great Commission', '28:16–20']
+  ];
+
+  var FULL = { Matt: 'Matthew', Mark: 'Mark', Luke: 'Luke', John: 'John', Isa: 'Isaiah', Heb: 'Hebrews', Matthew: 'Matthew' };
+
+  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+
+  // "Matt 6:14–15; Mark 11:25; 12:31" -> one link per citation; a chunk without a book keeps the previous book.
+  function linkRefs(str, book) {
+    var cur = book || 'Matt';
+    return str.split(';').map(function (chunk) {
+      chunk = chunk.trim();
+      var m = chunk.match(/^((?:[1-3]\s)?[A-Za-z]+)\s+(.*)$/);
+      var shown = chunk;
+      if (m) cur = m[1];
+      var verses = m ? m[2] : chunk;
+      var q = (FULL[cur] || cur) + ' ' + verses.replace(/–/g, '-');
+      return '<a href="https://www.biblegateway.com/passage/?search=' + encodeURIComponent(q) + '&version=ESV" target="_blank" rel="noopener">' + esc(shown) + '</a>';
+    }).join('; ');
+  }
+
+  var counts = { p: 0, m: 0 };
+
+  function rowsHtml(rows, defaultBook) {
+    return rows.map(function (r) {
+      var t = r[0];
+      if (t.charAt(0) === '#') return '<li class="sub-head">' + esc(t.slice(1)) + '</li>';
+      var kind = r[2] || '', other = r[3];
+      if (kind) counts[kind]++;
+      var num = '';
+      if (/^[1-6][A-Z]/.test(t)) { num = '<span class="num">' + t.charAt(0) + '</span>'; t = t.slice(1); }
+      var mark = kind ? '<span class="dot ' + kind + '" title="' + (kind === 'p' ? 'Parable' : 'Mighty work') + '"></span>' : '<span class="nodot"></span>';
+      var ref = other ? linkRefs(other + ' ' + r[1]) : linkRefs(r[1], defaultBook);
+      var from = other ? ' <span class="small">from ' + other + '</span>' : '';
+      return '<li class="row ' + kind + '"><span class="t">' + (num || mark) + '<span>' + esc(t) + from + '</span></span><span class="ref">' + ref + '</span></li>';
+    }).join('');
+  }
+
+  function quoteHtml(q) { return '“' + q[0].replace(/^“|”$/g, '') + '”'; }
+
+  var out = BOOKS.map(function (b) {
+    var n = b.narr, d = b.disc;
+    var narr = '<div class="narr"><p class="eyebrow">Narrative</p><h3>' + esc(n.title) + '</h3><p class="span cite">' + esc(n.refs) + '</p>' +
+      '<ul class="list">' + rowsHtml(n.rows, 'Matt') + '</ul>' +
+      (n.quote ? '<blockquote>' + esc(quoteHtml(n.quote)) + '<span class="cite">' + linkRefs(n.quote[1]) + '</span></blockquote>' : '') + '</div>';
+    var disc = '<article class="disc" id="' + b.id + '-discourse"><div class="disc-head"><span class="numeral">' + d.num + '</span>' +
+      '<p class="eyebrow">Discourse ' + d.num + ' &middot; ' + esc(d.refs) + '</p><h3>' + esc(d.title) + '</h3>' +
+      '<div class="meta"><span>Spoken to <b>' + esc(d.to) + '</b></span><span>' + esc(d.where) + ' <span class="cite">' + linkRefs(d.whereRef) + '</span></span></div></div>' +
+      '<p class="key">' + esc(quoteHtml(d.key)) + '<span class="cite">' + linkRefs(d.key[1]) + '</span></p>' +
+      '<ul class="list">' + rowsHtml(d.rows, 'Matt') + '</ul>' +
+      (d.companions ? '<div class="companions"><p class="sub-head">On the same theme, outside Matthew</p><ul class="list">' + rowsHtml(d.companions) + '</ul></div>' : '') +
+      (d.aside ? '<p class="aside-q">' + esc(quoteHtml(d.aside)) + '<span class="cite">' + linkRefs(d.aside[1]) + '</span></p>' : '') +
+      '</article>';
+    var refrain = '<div class="refrain"><p class="eyebrow">End of discourse ' + d.num + '</p><blockquote>“' + b.refrain[0] + '”</blockquote><span class="cite">' + linkRefs(b.refrain[1]) + '</span></div>';
+    return '<section class="book" id="' + b.id + '"><div class="book-label"><p class="eyebrow">' + b.label + ' &middot; ' + b.span + '</p></div>' +
+      '<div class="book-grid">' + narr + disc + '</div>' + refrain + '</section>';
+  }).join('');
+  document.getElementById('books').innerHTML = out;
+  document.getElementById('epilogue-list').innerHTML = rowsHtml(EPILOGUE, 'Matt');
+
+  // Static citations: turn data-refs into links.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-refs]'), function (el) {
+    el.innerHTML = linkRefs(el.getAttribute('data-refs'));
+  });
+
+  document.getElementById('count-p').textContent = counts.p;
+  document.getElementById('count-m').textContent = counts.m;
+
+  // Chapter map: n = narrative, d = discourse, x = birth and passion frame.
+  var CH = { 1: 'x', 2: 'x', 3: 'n', 4: 'n', 5: 'd', 6: 'd', 7: 'd', 8: 'n', 9: 'n', 10: 'd', 11: 'n', 12: 'n', 13: 'd', 14: 'n', 15: 'n', 16: 'n', 17: 'n', 18: 'd', 19: 'n', 20: 'n', 21: 'n', 22: 'n', 23: 'd', 24: 'd', 25: 'd', 26: 'x', 27: 'x', 28: 'x' };
+  var TARGET = function (c) {
+    if (c <= 4) return 'book-1'; if (c <= 7) return 'book-1-discourse'; if (c <= 9) return 'book-2'; if (c === 10) return 'book-2-discourse';
+    if (c <= 12) return 'book-3'; if (c === 13) return 'book-3-discourse'; if (c <= 17) return 'book-4'; if (c === 18) return 'book-4-discourse';
+    if (c <= 22) return 'book-5'; if (c <= 25) return 'book-5-discourse'; return 'epilogue';
+  };
+  var cells = '';
+  for (var c = 1; c <= 28; c++) cells += '<a class="cell ' + CH[c] + '" href="#' + TARGET(c) + '" title="Matthew ' + c + '">' + c + '</a>';
+  document.getElementById('map').innerHTML = cells;
+  var LABELS = [
+    [1, 2, 'x', 'Birth', 'Birth'], [3, 4, 'n', 'Baptism, Galilee', '3–4'], [5, 7, 'd', 'I · Sermon on the Mount', 'I'],
+    [8, 9, 'n', 'Mighty works', '8–9'], [10, 10, 'd', 'II · Mission', 'II'], [11, 12, 'n', 'Opposition', '11–12'],
+    [13, 13, 'd', 'III · Parables', 'III'], [14, 17, 'n', 'Bread, water, confession', '14–17'], [18, 18, 'd', 'IV · Community', 'IV'],
+    [19, 22, 'n', 'To Jerusalem', '19–22'], [23, 25, 'd', 'V · End of the age', 'V'], [26, 28, 'x', 'Passion, resurrection', '26–28']
+  ];
+  document.getElementById('map-labels').innerHTML = LABELS.map(function (l) {
+    return '<span class="' + l[2] + '" style="grid-column:' + l[0] + ' / ' + (l[1] + 1) + '"><span class="long">' + l[3] + '</span><span class="short">' + l[4] + '</span></span>';
+  }).join('');
+
+  // Highlight parables or mighty works across every list.
+  var buttons = document.querySelectorAll('.seg button');
+  Array.prototype.forEach.call(buttons, function (btn) {
+    btn.addEventListener('click', function () {
+      var hl = btn.getAttribute('data-hl');
+      if (hl) document.body.setAttribute('data-hl', hl); else document.body.removeAttribute('data-hl');
+      Array.prototype.forEach.call(buttons, function (b) { b.setAttribute('aria-pressed', String(b === btn)); });
+    });
+  });
+})();
+</script>
+</body>
+</html>
